@@ -10,17 +10,6 @@ export default function Home() {
 
       </div>
 
-      <div className="tw-relative tw-flex tw-place-items-center before:tw-absolute before:tw-h-[300px] before:tw-w-[480px] before:-tw-translate-x-1/2 before:tw-rounded-full before:tw-bg-gradient-radial before:tw-from-white before:tw-to-transparent before:tw-blur-2xl before:tw-content-[''] after:tw-absolute after:-tw-z-20 after:tw-h-[180px] after:tw-w-[240px] after:tw-translate-x-1/3 after:tw-bg-gradient-conic after:tw-from-sky-200 after:tw-via-blue-200 after:tw-blur-2xl after:tw-content-[''] before:dark:tw-bg-gradient-to-br before:dark:tw-from-transparent before:dark:tw-to-blue-700 before:dark:tw-opacity-10 after:dark:tw-from-sky-900 after:dark:tw-via-[#0141ff] after:dark:tw-opacity-40 before:lg:tw-h-[360px] tw-z-[-1] ">
-        <Image
-          className="tw-relative dark:tw-drop-shadow-[0_0_0.3rem_#ffffff70] dark:tw-invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
       <div className="tw-mb-32 tw-grid tw-text-center lg:tw-max-w-5xl lg:tw-w-full lg:tw-mb-0 lg:tw-grid-cols-4 lg:tw-text-left">
         <a
           href="/cv"
