@@ -141,3 +141,32 @@ body {
   left: 0.5rem;
   border-left: 2px solid #1a1a1bbf;
 }
+
+/* styling for when ctrl+p is pressed */
+@media print {
+
+  /* hide elements */
+  header,
+  .outline-wrapper,
+  .react-pdf__Page__textContent,
+  .react-pdf__Page__annotations {
+    display: none;
+  }
+
+  /* fix styles */
+  .pdf-viewer-container>div:last-child {
+    padding: 0 !important;
+  }
+
+  .react-pdf__Page {
+    margin: 0;
+    box-shadow: none;
+  }
+
+  /* remove blank page for a4 size */
+  /* .react-pdf__Page__canvas {
+    width: 800px !important;
+    height: 1101px !important;
+  } */
+
+}

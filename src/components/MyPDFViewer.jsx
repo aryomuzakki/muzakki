@@ -1,11 +1,12 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useResizeObserver } from '@wojtekmaj/react-hooks';
+import { useIntersectionObserver, useResizeObserver } from '@wojtekmaj/react-hooks';
 import { pdfjs, Document, Page, Outline } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import debounce from 'lodash.debounce';
+import PDFPageWrapper from './PDFPageWrapper';
 
 // pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 //   'pdfjs-dist/build/pdf.worker.min.js',
@@ -42,31 +43,44 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
   const [zoomPercentVal, setZoomPercentVal] = useState(100);
   const [scale, setScale] = useState(zoomPercentVal / 100);
 
+  const [currentPageNum, setCurrentPageNum] = useState(0);
+  const [pagesInViewState, setPagesInViewState] = useState([]);
+
   const searchQueryBox = useRef();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const [isOutlineOpen, setIsOutlineOpen] = useState(false);
 
-  const onResize = useCallback((entries) => {
+  const onResize = useCallback(debounce((entries) => {
     const [entry] = entries;
 
     if (entry) {
       setContainerWidth(entry.contentRect.width);
     }
-  }, []);
+  }, 100), []);
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
-  function onDocumentLoadSuccess({ numPages: nextNumPages }) {
-    setNumPages(nextNumPages);
-  }
+  useEffect(() => {
 
-  const loadError = (error) => {
-    console.log("Error load: ", error.message)
-  }
-  const sourceError = (error) => {
-    console.log("Error source: ", error.message)
+    const pageNum = pagesInViewState.findIndex((val) => val) + 1;
+
+    setCurrentPageNum(pageNum);
+
+    return () => { }
+  }, [pagesInViewState]);
+
+  const zoomShortcut = (ev) => {
+    if (ev.ctrlKey) {
+      if (ev.code === "Equal" || ev.key === "=") {
+        // increment zoom
+        // setZoomPercentVal(zoomPercentVal+10)
+        // setScale()
+      } else if (ev.code === "Minus" || ev.key === "-") {
+        // decrement zoom
+      }
+    }
   }
 
   const highlightPattern = (text, pattern) => {
@@ -118,12 +132,30 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
     }
 
     return () => {
-
+      document.removeEventListener("keydown", zoomShortcut);
     }
   }, [])
 
+  const onDocumentLoadSuccess = useCallback(({ numPages: nextNumPages }) => {
+    setNumPages(nextNumPages);
+
+    document.addEventListener("keydown", zoomShortcut);
+  });
+
+  const onPageLoadSuccess = (loadedPage) => {
+    console.log("page loaded: ", loadedPage)
+    console.log("page loaded number: ", loadedPage.pageNumber)
+  }
+
+  const loadError = (error) => {
+    console.log("Error load: ", error.message)
+  }
+  const sourceError = (error) => {
+    console.log("Error source: ", error.message)
+  }
+
   return (
-    <div className="tw-min-h-screen tw-bg-zinc-600">
+    <div className="tw-min-h-screen tw-bg-zinc-600 pdf-viewer-container">
       <header className="tw-fixed tw-z-50 tw-w-full">
         <div className="tw-z-50 tw-relative tw-p-2 tw-h-14 tw-w-full glass-bg-dark tw-shadow-[0_1px_4px_rgba(0,0,0,0.3)] tw-flex tw-items-center tw-justify-between">
           <div className="tw-pl-4 tw-flex tw-justify-between tw-w-full">
@@ -150,9 +182,34 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
             </div>
           </div>
           <div className="tw-pr-4 tw-flex tw-justify-between tw-items-center tw-gap-8 tw-flex-shrink-0">
-            <div className="">
-              <p>{numPages || 0} page{numPages > 1 ? "s" : ""} </p>
-            </div>
+            <form
+              className="tw-flex"
+              onSubmit={(ev) => {
+                ev.preventDefault();
+                const targetEl = document.querySelector(`div[data-page-number="${ev.target.pageNum.value}"]`);
+                targetEl.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              <span>
+                page
+                <input
+                  type="text"
+                  name="pageNum"
+                  className="tw-du-input tw-du-input-sm tw-rounded tw-mx-2 tw-w-12 tw-text-center tw-bg-[#48484dbf] tw-backdrop-blur-[16px] tw-backdrop-saturate-[180%]"
+                  value={currentPageNum}
+                  onChange={(ev) => {
+                    let val = ev.target.value && parseInt(ev.target.value) || -1;
+                    if (val > numPages) {
+                      val = numPages;
+                    } else if (val < 0) {
+                      val = "";
+                    }
+                    setCurrentPageNum(val);
+                  }}
+                />
+                of {numPages || 0}
+              </span>
+            </form>
             <div className="">
               <form
                 onSubmit={(ev) => {
@@ -161,7 +218,7 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
                   setZoomPercentVal(parseInt(ev.target.zoomPercent.value) || 100);
                 }}
               >
-                <label className="tw-du-input tw-du-input-sm tw-bg-[#48484dbf] tw-backdrop-blur-[16px] tw-backdrop-saturate-[180%] tw-flex tw-items-center tw-gap-2">
+                <label className="tw-du-input tw-du-input-sm  tw-rounded tw-bg-[#48484dbf] tw-backdrop-blur-[16px] tw-backdrop-saturate-[180%] tw-flex tw-items-center tw-gap-2">
                   <input
                     type="text"
                     name="zoomPercent"
@@ -205,7 +262,6 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
             name="searchQuery"
             id="searchQuery"
             onChange={useCallback(debounce((ev) => {
-              console.log(ev.target.value)
               setSearchQuery(ev.target.value)
             }, 500))}
             ref={searchQueryBox}
@@ -233,12 +289,15 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
               </div>
             </div>
             {Array.from(new Array(numPages), (el, index) => (
-              <Page
+              <PDFPageWrapper
+                index={index}
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
                 width={containerWidth ? Math.min(containerWidth, maxWidth) : maxWidth}
                 customTextRenderer={textRenderer}
                 scale={scale}
+                onLoadSuccess={onPageLoadSuccess}
+                setPagesInViewState={setPagesInViewState}
               />
             ))}
           </Document>
