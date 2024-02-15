@@ -1,17 +1,13 @@
 import WebDemoViewer from "@/components/WebDemoViewer";
-import { useSearchParams } from "next/navigation"
+import { Suspense } from "react";
 
 const demo = () => {
-  const params = useSearchParams();
-
-  console.log("params: ", params);
-  console.log("url: ", params.get("url"));
-
-  const src = params.get("url");
 
   return (
     <div>
-      <WebDemoViewer src={src} />
+      <Suspense>
+        <WebDemoViewer />
+      </Suspense>
     </div>
   )
 }

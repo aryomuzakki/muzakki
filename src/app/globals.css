@@ -23,6 +23,16 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+/* custom */
+.glass-bg-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #27272ae6;
+  backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0px 0 5px 1px #00000080;
+  z-index: -1;
+}
 
 /* pdf viewer */
 .react-pdf__Document {
@@ -40,12 +50,94 @@ body {
   padding: 1.5rem;
 }
 
-.textLayer :is(span, br)::selection {
+.textLayer :is(span, br, mark)::selection {
   color: transparent;
   background-color: #536bd966;
 }
 
-.textLayer :is(span, br)::-moz-selection {
+.textLayer :is(span, br, mark)::-moz-selection {
   color: transparent;
   background-color: #536bd966;
+}
+
+.textLayer mark {
+  color: transparent;
+  background-color: #a1a11266;
+}
+
+/* pdf headings thumbnail (document outline) */
+.outline-wrapper {
+  position: fixed;
+  max-width: 340px;
+  transition: .3s ease-in-out;
+  z-index: 4;
+}
+
+.outline-wrapper .scrollable-wrapper {
+  padding: 1.5rem;
+  height: calc(100vh - 3.5rem);
+  overflow-y: auto;
+}
+
+.react-pdf__Outline li {
+  padding-left: 1.5rem;
+}
+
+.react-pdf__Outline>ul>li {
+  padding: 0;
+  /* font-size: larger; */
+}
+
+.react-pdf__Outline>ul>li>a {
+  font-size: 1.1rem;
+}
+
+.react-pdf__Outline>ul>li>ul>li>a {
+  font-size: 1.05rem;
+}
+
+.react-pdf__Outline>ul>li>ul>li>ul>li {
+  font-size: 1rem;
+}
+
+.react-pdf__Outline a {
+  position: relative;
+  display: block;
+  padding: .15rem .5rem;
+  margin: .2rem 0;
+  transition: .2s;
+}
+
+.react-pdf__Outline a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  background-color: #27272ae6;
+  backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 0 1px 0 #00000080;
+  transition: .2s;
+  z-index: -1;
+}
+
+.react-pdf__Outline a:hover::before {
+  background-color: #48484dbf;
+  box-shadow: 0 0 2px 0 #00000080;
+}
+
+.react-pdf__Outline a:active::before {
+  background-color: #39393dbf;
+  box-shadow: none;
+}
+
+.react-pdf__Outline ul {
+  position: relative;
+}
+
+.react-pdf__Outline>ul>li ul::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 0.5rem;
+  border-left: 2px solid #1a1a1bbf;
 }
