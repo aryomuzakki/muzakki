@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useIntersectionObserver, useResizeObserver } from '@wojtekmaj/react-hooks';
+import { useResizeObserver } from '@wojtekmaj/react-hooks';
 import { pdfjs, Document, Page, Outline } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
@@ -71,24 +71,49 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
     return () => { }
   }, [pagesInViewState]);
 
+
+  const changeScale = (scaling) => {
+    setZoomPercentVal((prevZoom) => {
+      prevZoom = Math.min(Math.max(20, prevZoom + scaling), 200);
+      return prevZoom;
+    });
+    setScale((prevScale) => {
+      prevScale = Math.min(Math.max(0.2, prevScale + (scaling / 100)), 2);
+      return prevScale;
+    });
+  }
+
   const zoomShortcut = (ev) => {
-    if (ev.ctrlKey) {
-      if (ev.code === "Equal" || ev.key === "=") {
-        // increment zoom
-        // setZoomPercentVal(zoomPercentVal+10)
-        // setScale()
-      } else if (ev.code === "Minus" || ev.key === "-") {
-        // decrement zoom
+    if (document.activeElement.classList.contains("document-container")) {
+      if (ev.ctrlKey) {
+        if (ev.code === "Equal" || ev.key === "=") {
+          ev.preventDefault();
+          changeScale(10);
+        } else if (ev.code === "Minus" || ev.key === "-") {
+          ev.preventDefault();
+          changeScale(-10);
+        }
+      }
+    }
+  }
+
+  const zoomWheel = (ev) => {
+    if (ev.ctrlKey && Math.abs(ev.deltaY).toString().split(".").length === 1) {
+      ev.preventDefault();
+      if (Math.abs(ev.deltaY) > 50) {
+        changeScale(parseInt(-(ev.deltaY / 10)));
+      } else {
+        changeScale(parseInt(-ev.deltaY));
       }
     }
   }
 
   const highlightPattern = (text, pattern) => {
-    return text.replace(pattern, (value) => `<mark>${value}</mark>`);
+    return text.replaceAll(pattern, (value) => `<mark>${value}</mark>`);
   }
 
   const textRenderer = useCallback(
-    (textItem) => highlightPattern(textItem.str, searchQuery),
+    (textItem) => searchQuery.length === 0 ? textItem.str : highlightPattern(textItem.str, searchQuery),
     [searchQuery]
   );
 
@@ -132,19 +157,23 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
     }
 
     return () => {
-      document.removeEventListener("keydown", zoomShortcut);
+      document.getElementsByClassName("document-container")[0].removeEventListener("keydown", zoomShortcut);
+
+      document.getElementsByClassName("react-pdf__Document")[0].removeEventListener("wheel", zoomWheel);
     }
   }, [])
 
   const onDocumentLoadSuccess = useCallback(({ numPages: nextNumPages }) => {
     setNumPages(nextNumPages);
 
-    document.addEventListener("keydown", zoomShortcut);
+    document.getElementsByClassName("document-container")[0].addEventListener("keydown", zoomShortcut);
+
+    document.getElementsByClassName("react-pdf__Document")[0].addEventListener("wheel", zoomWheel);
   });
 
   const onPageLoadSuccess = (loadedPage) => {
-    console.log("page loaded: ", loadedPage)
-    console.log("page loaded number: ", loadedPage.pageNumber)
+    // console.log("page loaded: ", loadedPage)
+    // console.log("page loaded number: ", loadedPage.pageNumber)
   }
 
   const loadError = (error) => {
@@ -157,37 +186,44 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
   return (
     <div className="tw-min-h-screen tw-bg-zinc-600 pdf-viewer-container">
       <header className="tw-fixed tw-z-50 tw-w-full">
-        <div className="tw-z-50 tw-relative tw-p-2 tw-h-14 tw-w-full glass-bg-dark tw-shadow-[0_1px_4px_rgba(0,0,0,0.3)] tw-flex tw-items-center tw-justify-between">
-          <div className="tw-pl-4 tw-flex tw-justify-between tw-w-full">
-            <div className="tw-flex tw-items-center tw-gap-4">
-              {
-                isOutlineOpen && (
-                  <button type="button" className="tw-du-btn tw-du-btn-circle tw-du-btn-sm tw-du-btn-ghost tw-w-10 tw-h-10" onClick={(ev) => { toggleOutline() }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
-                      <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth={2}><path d="M5 5L19 5"><animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M5 5L19 5;M5 5L19 19"></animate></path><path d="M5 12H19"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 12H19;M12 12H12"></animate><set attributeName="opacity" begin="0.4s" to={0}></set></path><path d="M5 19L19 19"><animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M5 19L19 19;M5 19L19 5"></animate></path></g>
-                    </svg>
-                  </button>
-                )
-              }
-              {
-                !isOutlineOpen && (
-                  <button type="button" className="tw-du-btn tw-du-btn-circle tw-du-btn-sm tw-du-btn-ghost tw-w-10 tw-h-10" onClick={(ev) => { toggleOutline() }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
-                      <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth={2}><path d="M5 5L19 19"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 5L19 19;M5 5L19 5"></animate></path><path d="M12 12H12" opacity={0}><animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M12 12H12;M5 12H19"></animate><set attributeName="opacity" begin="0.2s" to={1}></set></path><path d="M5 19L19 5"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 19L19 5;M5 19L19 19"></animate></path></g>
-                    </svg>
-                  </button>
-                )
-              }
-              <h1>{filename}</h1>
-            </div>
+        <div className="glass-bg-dark"></div>
+        <div className="tw-z-50 tw-overflow-x-scroll sm:tw-overflow-x-auto tw-p-2 tw-h-14 tw-w-full tw-shadow-[0_1px_4px_rgba(0,0,0,0.3)] tw-flex tw-items-center tw-justify-between">
+          <div className="tw-pl-4 tw-flex tw-w-full tw-items-center tw-space-x-4 tw-mr-4">
+            {
+              isOutlineOpen && (
+                <button type="button" className="tw-du-btn tw-du-btn-circle tw-du-btn-sm tw-du-btn-ghost tw-w-10 tw-h-10" onClick={(ev) => { toggleOutline() }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth={2}><path d="M5 5L19 5"><animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M5 5L19 5;M5 5L19 19"></animate></path><path d="M5 12H19"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 12H19;M12 12H12"></animate><set attributeName="opacity" begin="0.4s" to={0}></set></path><path d="M5 19L19 19"><animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M5 19L19 19;M5 19L19 5"></animate></path></g>
+                  </svg>
+                </button>
+              )
+            }
+            {
+              !isOutlineOpen && (
+                <button type="button" className="tw-du-btn tw-du-btn-circle tw-du-btn-sm tw-du-btn-ghost tw-w-10 tw-h-10" onClick={(ev) => { toggleOutline() }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth={2}><path d="M5 5L19 19"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 5L19 19;M5 5L19 5"></animate></path><path d="M12 12H12" opacity={0}><animate fill="freeze" attributeName="d" begin="0.2s" dur="0.4s" values="M12 12H12;M5 12H19"></animate><set attributeName="opacity" begin="0.2s" to={1}></set></path><path d="M5 19L19 5"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 19L19 5;M5 19L19 19"></animate></path></g>
+                  </svg>
+                </button>
+              )
+            }
+            <h1>{filename}</h1>
           </div>
           <div className="tw-pr-4 tw-flex tw-justify-between tw-items-center tw-gap-8 tw-flex-shrink-0">
             <form
               className="tw-flex"
               onSubmit={(ev) => {
                 ev.preventDefault();
-                const targetEl = document.querySelector(`div[data-page-number="${ev.target.pageNum.value}"]`);
-                targetEl.scrollIntoView({ behavior: "smooth" });
+                const targetPageNum = ev.target.pageNum.value;
+                if (targetPageNum < 1) {
+                  ev.target.pageNum.value = pagesInViewState.findIndex((val) => val) + 1;
+                } else {
+                  const targetEl = document.querySelector(`div[data-page-number="${targetPageNum}"]`);
+                  targetEl.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              onBlur={(ev) => {
+                ev.target.value = pagesInViewState.findIndex((val) => val) + 1;
               }}
             >
               <span>
@@ -210,34 +246,64 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
                 of {numPages || 0}
               </span>
             </form>
-            <div className="">
-              <form
-                onSubmit={(ev) => {
+            <form
+              className="tw-flex tw-items-center tw-space-x-2"
+              onSubmit={(ev) => {
+                ev.preventDefault();
+                let val = parseInt(ev.target.zoomPercent.value) || 100;
+                if (val < 20) {
+                  val = 20;
+                }
+                setScale(val / 100);
+                setZoomPercentVal(val);
+              }}
+              onBlur={(ev) => {
+                ev.target.value = scale * 100;
+              }}
+            >
+              <button
+                type="button"
+                onClick={(ev) => {
                   ev.preventDefault();
-                  setScale((parseInt(ev.target.zoomPercent.value) || 100) / 100);
-                  setZoomPercentVal(parseInt(ev.target.zoomPercent.value) || 100);
+                  changeScale(-10);
                 }}
+                className="tw-du-btn tw-du-btn-circle tw-du-btn-sm tw-du-btn-ghost tw-w-7 tw-h-7 tw-min-h-0"
               >
-                <label className="tw-du-input tw-du-input-sm  tw-rounded tw-bg-[#48484dbf] tw-backdrop-blur-[16px] tw-backdrop-saturate-[180%] tw-flex tw-items-center tw-gap-2">
-                  <input
-                    type="text"
-                    name="zoomPercent"
-                    className="grow tw-w-[28px] tw-text-center"
-                    value={zoomPercentVal}
-                    onChange={(ev) => {
-                      let val = ev.target.value && parseInt(ev.target.value) || -1;
-                      if (val > 199) {
-                        val = 199;
-                      } else if (val < 0) {
-                        val = "";
-                      }
-                      setZoomPercentVal(val);
-                    }}
-                  />
-                  <span className="tw-select-none">%</span>
-                </label>
-              </form>
-            </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M7 12c0 .55.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1H8c-.55 0-1 .45-1 1m5-10C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8"></path>
+                </svg>
+              </button>
+              <label className="tw-du-input tw-du-input-sm  tw-rounded tw-bg-[#48484dbf] tw-backdrop-blur-[16px] tw-backdrop-saturate-[180%] tw-flex tw-items-center tw-gap-2">
+                <input
+                  type="text"
+                  name="zoomPercent"
+                  className="grow tw-w-[28px] tw-text-center"
+                  value={zoomPercentVal}
+                  onChange={(ev) => {
+                    let val = ev.target.value && parseInt(ev.target.value) || -1;
+                    if (val > 200) {
+                      val = 200;
+                    } else if (val < 0) {
+                      val = "";
+                    }
+                    setZoomPercentVal(val);
+                  }}
+                />
+                <span className="tw-select-none">%</span>
+              </label>
+              <button
+                type="button"
+                onClick={(ev) => {
+                  ev.preventDefault();
+                  changeScale(10);
+                }}
+                className="tw-du-btn tw-du-btn-circle tw-du-btn-sm tw-du-btn-ghost tw-w-7 tw-h-7 tw-min-h-0"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1m0-5C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8"></path>
+                </svg>
+              </button>
+            </form>
           </div>
           <div className="tw-pr-4 tw-w-full">
             <div className="tw-flex tw-justify-end tw-gap-4">
@@ -270,38 +336,37 @@ const MyPDFViewer = ({ pathOrFileData, filename = "file.pdf" }) => {
         </div>
       </header >
 
-      <div className="tw-pt-14">
-        <div className="" ref={setContainerRef}>
-          <Document
-            file={file}
-            onLoadError={loadError}
-            onSourceError={sourceError}
-            onLoadSuccess={onDocumentLoadSuccess}
-            options={options}
-          >
-            { }
-            <div className={`outline-wrapper glass-bg-dark ${isOutlineOpen ? "tw-left-0" : "-tw-left-96"}`}>
-              <div className="scrollable-wrapper">
-                <h3 className="tw-font-semibold tw-text-lg tw-mb-3">
-                  Document Outline
-                </h3>
-                <Outline />
-              </div>
+      <div className="document-container focus:tw-outline-none tw-pt-14" tabIndex={-1} ref={setContainerRef}>
+        <Document
+          file={file}
+          onLoadError={loadError}
+          onSourceError={sourceError}
+          onLoadSuccess={onDocumentLoadSuccess}
+          options={options}
+          tabIndex={0}
+        >
+          { }
+          <div className={`outline-wrapper glass-bg-dark ${isOutlineOpen ? "tw-left-0" : "-tw-left-96"}`}>
+            <div className="scrollable-wrapper">
+              <h3 className="tw-font-semibold tw-text-lg tw-mb-3">
+                Document Outline
+              </h3>
+              <Outline />
             </div>
-            {Array.from(new Array(numPages), (el, index) => (
-              <PDFPageWrapper
-                index={index}
-                key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                width={containerWidth ? Math.min(containerWidth, maxWidth) : maxWidth}
-                customTextRenderer={textRenderer}
-                scale={scale}
-                onLoadSuccess={onPageLoadSuccess}
-                setPagesInViewState={setPagesInViewState}
-              />
-            ))}
-          </Document>
-        </div>
+          </div>
+          {Array.from(new Array(numPages), (el, index) => (
+            <PDFPageWrapper
+              index={index}
+              key={`page_${index + 1}`}
+              pageNumber={index + 1}
+              width={containerWidth ? Math.min(containerWidth, maxWidth) : maxWidth}
+              customTextRenderer={textRenderer}
+              scale={scale}
+              onLoadSuccess={onPageLoadSuccess}
+              setPagesInViewState={setPagesInViewState}
+            />
+          ))}
+        </Document>
       </div>
     </div >
   )
