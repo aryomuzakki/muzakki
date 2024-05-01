@@ -17,6 +17,7 @@ module.exports = {
   prefix: "tw-",
   plugins: [
     require("daisyui"),
+    "prettier-plugin-tailwindcss",
   ],
   daisyui: {
     prefix: "du-",
