@@ -1,0 +1,11 @@
+@tailwind components;
+
+@layer components {
+  .btn-primary {
+    @apply tw-flex tw-w-max tw-items-center tw-rounded-lg tw-border-2 tw-border-primary-600 tw-bg-primary-600 tw-px-4 tw-py-3 tw-text-lg tw-font-semibold tw-uppercase tw-leading-none tw-transition tw-duration-200 hover:-tw-translate-y-0.5 hover:tw-border-primary-600 hover:tw-bg-primary-500 focus:tw-border-primary-200 focus:tw-outline-none active:tw-translate-y-0.5 active:tw-bg-primary-900
+  }
+
+  .btn-outline {
+    @apply tw-border-primary-400 tw-bg-transparent tw-text-primary-400 hover:tw-bg-primary-600/30
+  }
+}

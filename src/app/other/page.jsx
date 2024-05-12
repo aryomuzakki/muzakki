@@ -1,20 +1,20 @@
 import fs from "fs";
 import path from "path";
 
-import MyPDFViewer from "@/components/MyPDFViewer"
+import MyPDFViewer from "@/components/PDFViewer/MyPDFViewer";
 
 const TestPDF = () => {
   const pdfFileDataURL = (filePath) => {
     const pdfBase64 = Buffer.from(fs.readFileSync(filePath)).toString("base64");
     return `data:application/pdf;base64,${pdfBase64}`;
-  }
+  };
 
   const filename = "sample.pdf";
-  const fileData = pdfFileDataURL(path.join(process.cwd(), `public/data/${filename}`));
+  const fileData = pdfFileDataURL(
+    path.join(process.cwd(), `public/data/${filename}`),
+  );
 
-  return (
-    <MyPDFViewer pathOrFileData={fileData} filename={filename} />
-  )
-}
+  return <MyPDFViewer pathOrFileData={fileData} filename={filename} />;
+};
 
-export default TestPDF
+export default TestPDF;
