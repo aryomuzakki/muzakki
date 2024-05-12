@@ -12,24 +12,20 @@ const WebDemoViewer = () => {
 
   return (
     <div>
-      <div className="tw-h-14 tw-flex tw-items-center">
-        <p className="tw-pl-4">
-          showing live site from : {src}
-        </p>
+      <div className="tw-flex tw-h-14 tw-items-center">
+        <p className="tw-pl-4">showing live site from : {src}</p>
       </div>
       <div style={{ height: "calc(100vh - 3.5rem)" }}>
-        {
-          src ? (
-            <iframe src={src} width="100%" height="100%"></iframe>
-          ) : (
-            <div>
-              <p>no link provided</p>
-            </div>
-          )
-        }
-      </div >
+        {src ? (
+          <iframe src={src} width="100%" height="100%"></iframe>
+        ) : (
+          <div>
+            <p>no link provided</p>
+          </div>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default WebDemoViewer
+export default WebDemoViewer;

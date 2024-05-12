@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer'
-import { Page } from 'react-pdf'
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { Page } from "react-pdf";
 
 const PDFPageWrapper = ({
   index,
@@ -12,7 +12,6 @@ const PDFPageWrapper = ({
   setPagesInViewState,
   ...props
 }) => {
-
   const [ref, inView, entry] = useInView({
     // onChange: inViewChanged,
     rootMargin: "-56px 0px 0px 0px",
@@ -28,7 +27,6 @@ const PDFPageWrapper = ({
     }
   }, [inView]);
 
-
   return (
     <div>
       <Page
@@ -41,7 +39,7 @@ const PDFPageWrapper = ({
         {...props}
       />
     </div>
-  )
-}
+  );
+};
 
-export default PDFPageWrapper
+export default PDFPageWrapper;
