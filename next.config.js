@@ -14,7 +14,10 @@ const publicDir = "./public/dist/js/";
 fs.mkdirSync(publicDir, { recursive: true });
 fs.copyFileSync(pdfWorker, pathJoin(publicDir, "pdf.worker.min.js"));
 
-const cMapsDir = pathJoin(pathDirname(require.resolve("pdfjs-dist/package.json")), "cmaps");
+const cMapsDir = pathJoin(
+  pathDirname(require.resolve("pdfjs-dist/package.json")),
+  "cmaps",
+);
 const standardFontsDir = pathJoin(
   pathDirname(require.resolve("pdfjs-dist/package.json")),
   "standard_fonts",
@@ -28,35 +31,39 @@ const nextConfig = {
       {
         source: "/cv-file",
         destination: "/data/cv_muhammad_aryo_muzakki.pdf",
-      }
-    ]
+      },
+    ];
   },
   compiler: {
-    ...isDev ? {} : {
-      removeConsole: {
-        exclude: ["error"],
-      },
-    },
+    ...(isDev
+      ? {}
+      : {
+          removeConsole: {
+            exclude: ["error"],
+          },
+        }),
   },
   webpack: (config, options) => {
     // for react-pdf to work
     config.resolve.alias.canvas = false;
 
-    config.plugins.push(new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: cMapsDir,
-          to: "cmaps/",
-        },
-        {
-          from: standardFontsDir,
-          to: "standard_fonts/",
-        },
-      ]
-    }))
+    config.plugins.push(
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: cMapsDir,
+            to: "cmaps/",
+          },
+          {
+            from: standardFontsDir,
+            to: "standard_fonts/",
+          },
+        ],
+      }),
+    );
 
     return config;
-  }
-}
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

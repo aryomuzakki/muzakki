@@ -1,0 +1,36 @@
+[
+  {
+    "time": "Jan 2022 - Present",
+    "company": "Bold & Underline",
+    "location": "Medan, Indonesia",
+    "title": "Web Developer",
+    "brief": "",
+    "taskList": [
+      "Developing and maintaning websites of the company and clients.",
+      "Establishing responsive and dynamic websites that guarantees fast loading, and maximum user experience with Next JS and using Wordpress as Headless CMS.",
+      "Managing Ubuntu server running pm2 and Open Lite Speed or Nginx"
+    ]
+  },
+  {
+    "time": "Mar 2021 - Jan 2022",
+    "company": "",
+    "location": "Medan, Indonesia",
+    "title": "Freelance Web Developer",
+    "brief": "",
+    "taskList": [
+      "Converting Figma design to responsive website with HTML, CSS, and Bootstrap CSS.",
+      "Modifying websites with HTML and CSS."
+    ]
+  },
+  {
+    "time": "Mar 2021 - May 2021",
+    "company": "Digital Innovation Lounge Medan",
+    "location": "Medan, Indonesia",
+    "title": "Junior Web Developer (Intern)",
+    "brief": "",
+    "taskList": [
+      "Making Web Templates using Bootstrap CSS Framework, and JQuery.",
+      "Developing a website in collaboration with a team using PHP language."
+    ]
+  }
+]

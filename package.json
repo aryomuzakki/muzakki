@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^9.5.0",
     "@wojtekmaj/react-hooks": "^1.18.1",
     "daisyui": "^4.7.2",
     "jparticles": "^3.5.0",
