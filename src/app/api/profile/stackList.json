@@ -1,0 +1,86 @@
+[
+  {
+    "stackName": "HTML",
+    "stackIconName": "SiHtml5"
+  },
+  {
+    "stackName": "CSS",
+    "stackIconName": "SiCss3"
+  },
+  {
+    "stackName": "Javascript",
+    "stackIconName": "SiJavascript"
+  },
+  {
+    "stackName": "Golang",
+    "stackIconName": "SiGo"
+  },
+  {
+    "stackName": "PHP",
+    "stackIconName": "SiPhp"
+  },
+  {
+    "stackName": "Node JS",
+    "stackIconName": "SiNodedotjs"
+  },
+  {
+    "stackName": "Express JS",
+    "stackIconName": "SiExpress"
+  },
+  {
+    "stackName": "React JS",
+    "stackIconName": "SiReact"
+  },
+  {
+    "stackName": "Next JS",
+    "stackIconName": "SiNextdotjs"
+  },
+  {
+    "stackName": "Bootstrap CSS",
+    "stackIconName": "SiBootstrap"
+  },
+  {
+    "stackName": "Tailwind CSS",
+    "stackIconName": "SiTailwindcss"
+  },
+  {
+    "stackName": "SASS/SCSS",
+    "stackIconName": "SiSass"
+  },
+  {
+    "stackName": "Gorilla Mux",
+    "stackIconName": "SiGorillamux"
+  },
+  {
+    "stackName": "Docker",
+    "stackIconName": "SiDocker"
+  },
+  {
+    "stackName": "Git",
+    "stackIconName": "SiGit"
+  },
+  {
+    "stackName": "Github",
+    "stackIconName": "SiGithub"
+  },
+  {
+    "stackName": "Ubuntu",
+    "stackIconName": "SiUbuntu"
+  },
+  {
+    "stackName": "Nginx",
+    "stackIconName": "SiNginx"
+  },
+  {
+    "stackName": "Apache",
+    "stackIconName": "SiApache"
+  },
+  {
+    "stackName": "PM2",
+    "stackIconName": "SiPm2"
+  },
+  {
+    "stackName": "Vercel",
+    "stackIconName": "SiVercel"
+  }
+]

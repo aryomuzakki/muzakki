@@ -12,6 +12,8 @@ const Particles = () => {
         proximity: 100,
         parallax: true,
         parallaxLayer: [4, 8, 10],
+        minSpeed: 0.05,
+        maxSpeed: 1,
       };
 
       const interactiveParticles = new Particle(
