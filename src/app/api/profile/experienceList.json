@@ -1,36 +1,48 @@
 [
   {
+    "category": "job",
     "time": "Jan 2022 - Present",
-    "company": "Bold & Underline",
+    "institution": "Bold & Underline",
     "location": "Medan, Indonesia",
     "title": "Web Developer",
     "brief": "",
-    "taskList": [
+    "briefList": [
       "Developing and maintaning websites of the company and clients.",
       "Establishing responsive and dynamic websites that guarantees fast loading, and maximum user experience with Next JS and using Wordpress as Headless CMS.",
       "Managing Ubuntu server running pm2 and Open Lite Speed or Nginx"
     ]
   },
   {
+    "category": "job",
     "time": "Mar 2021 - Jan 2022",
-    "company": "",
+    "institution": "",
     "location": "Medan, Indonesia",
     "title": "Freelance Web Developer",
     "brief": "",
-    "taskList": [
+    "briefList": [
       "Converting Figma design to responsive website with HTML, CSS, and Bootstrap CSS.",
       "Modifying websites with HTML and CSS."
     ]
   },
   {
+    "category": "job",
     "time": "Mar 2021 - May 2021",
-    "company": "Digital Innovation Lounge Medan",
+    "institution": "Digital Innovation Lounge Medan",
     "location": "Medan, Indonesia",
     "title": "Junior Web Developer (Intern)",
     "brief": "",
-    "taskList": [
+    "briefList": [
       "Making Web Templates using Bootstrap CSS Framework, and JQuery.",
       "Developing a website in collaboration with a team using PHP language."
     ]
+  },
+  {
+    "category": "education",
+    "time": "Sep 2018 - Sep 2021",
+    "institution": "State Polytechnic of Medan",
+    "location": "Medan, Indonesia",
+    "title": "D3 of Informatics Management",
+    "brief": "GPA 3.5",
+    "briefList": []
   }
 ]

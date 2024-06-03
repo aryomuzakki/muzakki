@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="tw-relative tw-flex tw-min-h-screen tw-w-full tw-items-center tw-justify-between tw-bg-gradient-primary tw-p-6 sm:tw-p-12 lg:tw-p-24">
       <Particles />
-      <div className="tw-z-[1] tw-max-w-screen-sm tw-rounded tw-bg-primary-900/50 tw-p-6 md:tw-max-w-3xl lg:tw-max-w-4xl">
+      <div className="tw-pointer-events-none tw-z-[1] tw-max-w-screen-sm tw-rounded tw-bg-primary-900/50 tw-p-6 md:tw-max-w-3xl lg:tw-max-w-4xl">
         <h1 className="tw-mb-2 tw-text-4xl tw-font-extrabold tw-uppercase tw-tracking-wider">
           Muhammad Aryo Muzakki
         </h1>
