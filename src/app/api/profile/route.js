@@ -1,11 +1,13 @@
 import stackList from "./stackList.json";
 import experienceList from "./experienceList.json";
+import projectList from "./projectList.json";
 
 export async function GET(request) {
   const data = {
     name: "Muhammad Aryo Muzakki",
     stacks: stackList,
     experiences: experienceList,
+    projects: projectList,
     address: {
       text: "Medan",
       url: "",
