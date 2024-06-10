@@ -1,0 +1,146 @@
+[
+  {
+    "category": "website",
+    "time": "2022",
+    "role": "Fullstack Web Developer",
+    "title": "Satya Terra Bhinneka University",
+    "description": "This is a University Website for Satya Terra Bhinneka University, on of our client. I build this website using a premium template from Envato. I update the code to match recent version, and modified it as required. There are profiles page, faculties, blogs/publications, and contact page. This website also have multi language feature.",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1717662665/me/muzakki/portfolio/web_satyaterrabhinneka.png",
+    "imageList": [
+      "https://res.cloudinary.com/aryomuzakki/image/upload/v1717662688/me/muzakki/portfolio/screencapture-satyaterrabhinneka-ac-id-2024-06-05-22_58_32.png"
+    ],
+    "links": [
+      {
+        "icon": "website",
+        "url": "https://satyaterrabhinneka.ac.id"
+      }
+    ],
+    "tags": ["Company Profile"]
+  },
+  {
+    "category": "website",
+    "time": "2022",
+    "role": "Fullstack Web Developer",
+    "title": "Matakail Communication",
+    "description": "This website is the Main Company website (an Event Organizer). I rebuild from beginning an already existing website built in php into a Next JS website with template from envato. There are company profile landing page, about page, portfolio page, and a contact form where the data will be sent to our gmail and saved to spreadsheet.",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1717662664/me/muzakki/portfolio/web_matakailcommunication.png",
+    "imageList": [
+      "https://res.cloudinary.com/aryomuzakki/image/upload/v1717662684/me/muzakki/portfolio/screencapture-matakailcommunication-2024-06-05-22_59_24.png"
+    ],
+    "links": [
+      {
+        "icon": "website",
+        "url": "https://matakailcommunication.com"
+      }
+    ],
+    "tags": ["Company Profile"]
+  },
+  {
+    "category": "website",
+    "time": "2022",
+    "role": "Fullstack Web Developer",
+    "title": "Halal Center Indonesia",
+    "description": "This is a company profile for Halal Center Indonesia, on of our client. Feature included are landing page, blog, contact form that will fill up the Google Spreadsheet, multi language (indonesia and English). The blog data are provided using wordpress",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1717662663/me/muzakki/portfolio/web_halalcenterindonesia.png",
+    "imageList": [
+      "https://res.cloudinary.com/aryomuzakki/image/upload/v1717662680/me/muzakki/portfolio/screencapture-halal-center-indonesia-vercel-app-2024-06-05-22_58_57.png"
+    ],
+    "links": [
+      {
+        "icon": "website",
+        "url": "https://halal-center-indonesia.vercel.app"
+      }
+    ],
+    "tags": ["Company Profile"]
+  },
+  {
+    "category": "website",
+    "time": "2021",
+    "role": "Fullstack Web Developer",
+    "title": "Azisten",
+    "description": "This is a website for a company that I and my friends once tried to build called Azisten. Azisten is a Company that will help people to clean up their rent-house. The feature are landing page, price list, and a order form that will connect to Whatsapp.",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1717662665/me/muzakki/portfolio/web_azisten.png",
+    "imageList": [
+      "https://res.cloudinary.com/aryomuzakki/image/upload/v1717850426/me/muzakki/portfolio/screencapture-web-archive-org-web-20210512035654-https-azisten-com-2024-06-08-19_35_40.png"
+    ],
+    "links": [
+      {
+        "icon": "website",
+        "url": "https://web.archive.org/web/20210512035654/https://azisten.com/"
+      }
+    ],
+    "tags": ["Company Profile"]
+  },
+  {
+    "category": "website",
+    "time": "2022",
+    "role": "Fullstack Web Developer",
+    "title": "Digital Registration System",
+    "description": "An Online Registration System and Check-in using QR Ticket.",
+    "image": "",
+    "imageList": [
+      ""
+    ],
+    "links": [
+      {
+        "icon": "website",
+        "url": ""
+      }
+    ],
+    "tags": ["QR Ticketing"]
+  },
+  {
+    "category": "website",
+    "time": "2022",
+    "role": "Fullstack Web Developer",
+    "title": "Lucky Draw - Spin Wheel",
+    "description": "A digital spin wheel to randomly pick a text.",
+    "image": "",
+    "imageList": [
+      ""
+    ],
+    "links": [
+      {
+        "icon": "website",
+        "url": ""
+      }
+    ],
+    "tags": ["Lucky Draw"]
+  },
+  {
+    "category": "website",
+    "time": "2022",
+    "role": "Fullstack Web Developer",
+    "title": "Lucky Draw - Random Number",
+    "description": "Randomly pick a number in 0 to 3 digits.",
+    "image": "",
+    "imageList": [
+      ""
+    ],
+    "links": [
+      {
+        "icon": "website",
+        "url": ""
+      }
+    ],
+    "tags": ["Lucky Draw"]
+  },
+  {
+    "category": "website",
+    "time": "2023",
+    "role": "Fullstack Web Developer",
+    "title": "PDF Viewer",
+    "description": "PDF Viewer built with Next JS to read pdf file. You can see document outline, jump to page, zooming, download, and highlight text. File will not be auto-downloaded by IDM",
+    "image": "",
+    "imageList": [
+      ""
+    ],
+    "links": [
+      {
+        "icon": "website",
+        "url": ""
+      }
+    ],
+    "tags": ["Tools"]
+  }
+]
