@@ -1,11 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import projectListJSON from "@/app/api/profile/projectList.json";
+import LightGallery from "lightgallery/react";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
 
 const Projects = () => {
   const [projectList, setProjectList] = useState(projectListJSON);
+
+  const lightGallery = useRef(null);
+
+  const onInit = useCallback((detail) => {
+    if (detail) {
+      lightGallery.current = detail.instance;
+    }
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -22,6 +37,7 @@ const Projects = () => {
 
     return () => {};
   }, []);
+
   return (
     <section className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-evenly tw-bg-gradient-primary-2 tw-p-6 sm:tw-p-12 lg:tw-p-24">
       <div className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200">
@@ -29,6 +45,7 @@ const Projects = () => {
           Projects
         </h3>
       </div>
+      <div></div>
       <ul className="tw-flex tw-flex-wrap tw-items-stretch tw-justify-evenly tw-gap-x-20 tw-gap-y-12">
         {projectList?.length > 0 &&
           projectList.map((projectData, idx) => {
@@ -39,11 +56,31 @@ const Projects = () => {
               >
                 <div className="tw-w-80 tw-overflow-hidden tw-rounded-t">
                   {projectData?.image ? (
-                    <img
-                      src={projectData?.image}
-                      alt={projectData?.title}
-                      className="tw-h-full tw-w-full tw-object-contain tw-object-top"
-                    />
+                    <button
+                      onClick={() => {
+                        lightGallery.current.refresh([
+                          {
+                            src: projectData?.image,
+                            thumb: projectData?.image,
+                            alt: projectData?.title,
+                            subHtml: `<div class="lightGallery-captions"><p>${projectData?.title}</p></div`,
+                          },
+                          ...projectData?.imageList.map((img) => ({
+                            src: img,
+                            thumb: img,
+                            alt: projectData?.title,
+                            subHtml: `<div class="lightGallery-captions"><p>${projectData?.title}</p></div`,
+                          })),
+                        ]);
+                        lightGallery.current.openGallery(0);
+                      }}
+                    >
+                      <img
+                        src={projectData?.image}
+                        alt={projectData?.title}
+                        className="tw-h-full tw-w-full tw-object-contain tw-object-top"
+                      />
+                    </button>
                   ) : (
                     <div className="tw-relative tw-flex tw-aspect-video tw-w-80 tw-select-none tw-flex-col tw-items-center tw-justify-center tw-bg-gray-600">
                       <div className="tw-absolute tw-inset-0"></div>
@@ -52,7 +89,7 @@ const Projects = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" className="tw-text-gray-400/50" width={24} height={24} viewBox="0 0 24 24">
                         <path fill="currentColor" d="M22 20.7L3.3 2L2 3.3l1 1V19c0 1.1.9 2 2 2h14.7l1 1zM5 19V6.3l7.6 7.6l-1.5 1.9L9 13.1L6 17h9.7l2 2zM8.8 5l-2-2H19c1.1 0 2 .9 2 2v12.2l-2-2V5z"></path>
                       </svg>
-                      <p className="tw-text-sm tw-font-light tw-text-gray-400/50 tw-uppercase">
+                      <p className="tw-text-sm tw-font-light tw-uppercase tw-text-gray-400/50">
                         No Image
                       </p>
                     </div>
@@ -113,6 +150,13 @@ const Projects = () => {
             );
           })}
       </ul>
+
+      <LightGallery
+        onInit={onInit}
+        elementClassNames={"projects"}
+        dynamic={true}
+        plugins={[lgZoom, lgThumbnail]}
+      />
     </section>
   );
 };
