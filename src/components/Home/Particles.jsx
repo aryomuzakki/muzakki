@@ -1,13 +1,15 @@
 "use client";
 
 import { Particle } from "jparticles";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Particles = () => {
+  const [interactiveParticles, setInteractiveParticles] = useState();
+
   useEffect(() => {
     if (window && typeof window !== "undefined") {
       const particleOpts = {
-        lineShape: 'star:5:0.5',
+        lineShape: "star:5:0.5",
         minR: 1,
         maxR: 3,
         range: 150,
@@ -18,17 +20,36 @@ const Particles = () => {
         maxSpeed: 1,
       };
 
-      const interactiveParticles = new Particle(
-        ".interactive-particles",
-        particleOpts,
-      );
+      const theParticles = new Particle(".interactive-particles", particleOpts);
+
+      setInteractiveParticles(theParticles);
     }
 
     return () => {};
   }, []);
 
   return (
-    <div className="interactive-particles tw-absolute tw-inset-0 tw-h-full tw-w-full"></div>
+    <>
+      <div className="interactive-particles tw-absolute tw-inset-0 tw-h-full tw-w-full"></div>
+      <div className="tw-absolute tw-bottom-8 tw-left-8 tw-z-[1] tw-flex tw-gap-4 tw-text-sm tw-font-extralight tw-text-primary-200 tw-opacity-50">
+        <button
+          className="hover:tw-text-primary-400"
+          onClick={() => {
+            interactiveParticles.open();
+          }}
+        >
+          Play
+        </button>
+        <button
+          className="hover:tw-text-primary-400"
+          onClick={() => {
+            interactiveParticles.pause();
+          }}
+        >
+          Pause
+        </button>
+      </div>
+    </>
   );
 };
 

@@ -39,24 +39,28 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-evenly tw-bg-gradient-primary-2 tw-p-6 sm:tw-p-12 lg:tw-p-24">
-      <div className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200">
+    <section
+      id="projects"
+      className="tw-flex tw-w-full tw-scroll-mt-8 tw-flex-col tw-items-center tw-justify-evenly tw-bg-gradient-primary-2 tw-p-6 sm:tw-scroll-m-0 sm:tw-p-12 lg:tw-p-24"
+    >
+      <div className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2">
         <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
           Projects
         </h3>
       </div>
       <div></div>
-      <ul className="tw-flex tw-flex-wrap tw-items-stretch tw-justify-evenly tw-gap-x-20 tw-gap-y-12">
+      <ul className="tw-flex tw-flex-wrap tw-items-stretch tw-justify-evenly tw-gap-x-20 tw-gap-y-24">
         {projectList?.length > 0 &&
           projectList.map((projectData, idx) => {
             return (
               <li
                 key={idx}
-                className="tw-flex tw-w-min tw-flex-col tw-space-y-5 tw-rounded-md tw-bg-primary-800/50 tw-p-7"
+                className="tw-flex tw-w-min tw-flex-col tw-gap-y-5 tw-rounded-md tw-bg-primary-800/50 tw-p-7"
               >
                 <div className="tw-w-80 tw-overflow-hidden tw-rounded-t">
                   {projectData?.image ? (
                     <button
+                      className="tw-block"
                       onClick={() => {
                         lightGallery.current.refresh([
                           {
@@ -78,7 +82,7 @@ const Projects = () => {
                       <img
                         src={projectData?.image}
                         alt={projectData?.title}
-                        className="tw-h-full tw-w-full tw-object-contain tw-object-top"
+                        className="tw-h-full tw-w-full tw-object-contain tw-object-center tw-transition tw-duration-500 hover:tw-scale-105"
                       />
                     </button>
                   ) : (
