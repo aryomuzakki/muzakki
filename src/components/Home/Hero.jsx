@@ -4,16 +4,19 @@ const Particles = dynamic(() => import("./Particles"), { ssr: false });
 
 const Hero = () => {
   return (
-    <section className="tw-relative tw-flex tw-min-h-screen tw-w-full tw-items-center tw-justify-between tw-bg-gradient-primary tw-p-6 sm:tw-p-12 lg:tw-p-24">
+    <section
+      id="home"
+      className="tw-relative tw-flex tw-min-h-screen tw-w-full tw-items-center tw-justify-between tw-bg-gradient-primary tw-p-6 sm:tw-p-12 lg:tw-p-24"
+    >
       <Particles />
-      <div className="tw-pointer-events-none tw-z-[1] tw-max-w-screen-sm tw-rounded tw-bg-primary-900/50 tw-p-6 md:tw-max-w-3xl lg:tw-max-w-4xl">
-        <h1 className="tw-mb-2 tw-text-4xl tw-font-extrabold tw-uppercase tw-tracking-wider">
+      <div className="glass-bg-primary-2 tw-pointer-events-none tw-relative tw-z-[1] tw-max-w-screen-sm tw-overflow-hidden tw-rounded-lg tw-p-6 md:tw-max-w-3xl lg:tw-max-w-4xl">
+        <h1 className=" tw-pointer-events-auto tw-mb-2 tw-text-4xl tw-font-extrabold tw-uppercase tw-tracking-wider">
           Muhammad Aryo Muzakki
         </h1>
-        <h2 className="tw-mb-5 tw-text-xl tw-uppercase tw-tracking-widest">
+        <h2 className="tw-pointer-events-auto tw-mb-5 tw-text-xl tw-uppercase tw-tracking-widest">
           FRONT-END / BACK-END WEB DEVELOPER
         </h2>
-        <p className="tw-mb-5 tw-leading-6">
+        <p className="tw-pointer-events-auto tw-mb-5 tw-leading-6">
           I'm that person who produce a user-friendly, responsive websites that
           leave a lasting impression. I'll provide a well-structured,
           maintainable code, and leveraging modern technology to upscale your
@@ -21,8 +24,8 @@ const Hero = () => {
         </p>
         <div className="tw-flex tw-items-center">
           <a
-            href="mailto:aryo.muzakki@gmail.com"
-            className="btn-primary tw-mr-4"
+            href="#contact"
+            className="btn-primary scroll-to-view tw-mr-4"
             rel="noopener noreferrer"
           >
             {/* mdi:contact */}

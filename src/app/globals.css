@@ -34,6 +34,25 @@ body {
   z-index: -1;
 }
 
+.glass-bg-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to left top, #041d34bf, #051a2dbf, #061626bf, #05121fbf, #020d18bf);
+  backdrop-filter: blur(12px);
+  box-shadow: 0px 0 5px 1px #00000080;
+  z-index: -1;
+}
+
+.glass-bg-primary-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #08376320;
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
 /* pdf viewer */
 .react-pdf__Document {
   display: flex;

@@ -23,13 +23,16 @@ const Experiences = () => {
     return () => {};
   }, []);
   return (
-    <section className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-evenly tw-bg-gradient-primary tw-p-6 sm:tw-p-12 lg:tw-p-24">
-      <div className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200">
+    <section
+      id="experiences"
+      className="tw-flex tw-w-full tw-scroll-mt-8 tw-flex-col tw-items-center tw-justify-evenly tw-bg-gradient-primary tw-p-6 sm:tw-scroll-m-0 sm:tw-p-12 lg:tw-p-24"
+    >
+      <div className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2">
         <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
           Experiences
         </h3>
       </div>
-      <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-space-x-6">
+      <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-gap-x-6">
         <ul className="tw-du-timeline tw-du-timeline-vertical tw-du-timeline-snap-icon max-md:tw-du-timeline-compact">
           {experienceList?.length > 0 &&
             experienceList.map((expData, idx) => {

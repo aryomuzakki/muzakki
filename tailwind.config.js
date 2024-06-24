@@ -12,6 +12,8 @@ module.exports = {
           "linear-gradient(to left top, #041d34, #051a2d, #061626, #05121f, #020d18)",
         "gradient-primary-2":
           "linear-gradient(to left bottom, #041d34, #051a2d, #061626, #05121f, #020d18)",
+        "gradient-primary-2/75":
+          "linear-gradient(to left bottom, #041d34bf, #051a2dbf, #061626bf, #05121fbf, #020d18bf)",
       },
       colors: {
         primary: {
