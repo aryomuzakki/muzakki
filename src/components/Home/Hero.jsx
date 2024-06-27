@@ -17,7 +17,7 @@ const Hero = () => {
           FRONT-END / BACK-END WEB DEVELOPER
         </h2>
         <p className="tw-pointer-events-auto tw-mb-5 tw-leading-6">
-          I'm that person who produce a user-friendly, responsive websites that
+          I'm the person who will produce a user-friendly, responsive websites that
           leave a lasting impression. I'll provide a well-structured,
           maintainable code, and leveraging modern technology to upscale your
           business.
