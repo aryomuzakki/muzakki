@@ -75,7 +75,9 @@ const Header = () => {
   return (
     <header className="glass-bg-primary tw-fixed tw-z-10 tw-flex tw-w-full tw-justify-center tw-border-b tw-border-primary-800 tw-bg-opacity-75 tw-px-6 tw-py-3 sm:tw-px-12 lg:tw-px-24">
       <div className="tw-mr-auto tw-flex tw-items-center">
-        <p className="tw-py-2 tw-font-semibold tw-text-primary-500">Aryo</p>
+        <p className="tw-select-none tw-py-2 tw-font-semibold tw-text-primary-100">
+          M Aryo Muzakki
+        </p>
       </div>
       <nav className="tw-text-primary-100">
         <ul className="tw-hidden tw-items-center tw-justify-center sm:tw-flex lg:tw-gap-x-4">
