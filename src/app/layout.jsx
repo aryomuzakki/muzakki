@@ -3,7 +3,7 @@ import "./globals.css";
 import "./components.css";
 import MouseLight from "@/components/MouseLight";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
 
@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
       <body
         // className={`${nunitoSans.className} tw-bg-gradient-to-br tw-from-primary-950 tw-from-50% tw-to-primary-900`}
         className={`${nunitoSans.className} tw-bg-gradient-primary`}
+        // className={`tw-bg-gradient-primary`}
       >
         <MouseLight />
         {children}
