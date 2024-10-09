@@ -35,13 +35,20 @@ const Contact = () => {
       id="contact"
       className="tw-flex tw-w-full tw-scroll-mt-8 tw-flex-col tw-items-center tw-justify-evenly tw-bg-gradient-primary tw-p-6 sm:tw-scroll-m-0 sm:tw-p-12 lg:tw-p-24"
     >
-      <div className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2">
+      <div
+        className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2"
+        data-aos="fade-up"
+      >
         <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
           Contact
         </h3>
       </div>
       <div className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-between tw-gap-8 lg:tw-flex-row">
-        <div className="tw-w-full tw-rounded-md tw-bg-primary-800/50 tw-p-7 lg:tw-w-auto lg:tw-min-w-[512px]">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="50"
+          className="tw-w-full tw-rounded-md tw-bg-primary-800/50 tw-p-7 lg:tw-w-auto lg:tw-min-w-[512px]"
+        >
           <form id="message-form" className="tw-flex tw-flex-col tw-gap-8">
             <div className="tw-full tw-flex tw-flex-col tw-gap-x-4 tw-gap-y-8 md:tw-flex-row">
               <label className="tw-du-form-control tw-w-full lg:tw-max-w-xs">
@@ -91,7 +98,10 @@ const Contact = () => {
               ></textarea>
             </label>
             <div className="tw-flex tw-justify-between">
-              <button type="reset" className="btn-primary btn-outline !tw-text-base">
+              <button
+                type="reset"
+                className="btn-primary btn-outline !tw-text-base"
+              >
                 Reset
               </button>
               <button
@@ -107,8 +117,12 @@ const Contact = () => {
                   const phoneNumberValue = messageFormData.get("phoneNumber");
                   const messageValue = messageFormData.get("message");
 
-                  if ([fullnameValue, phoneNumberValue, messageValue].some(val => val === "")) {
-                    alert("All fields are required")
+                  if (
+                    [fullnameValue, phoneNumberValue, messageValue].some(
+                      (val) => val === "",
+                    )
+                  ) {
+                    alert("All fields are required");
                     return false;
                   }
 
@@ -137,12 +151,14 @@ const Contact = () => {
         </div>
 
         <div>
-          <p className="tw-text-primary-300">OR</p>
+          <p data-aos="fade-up" className="tw-text-primary-300">
+            OR
+          </p>
         </div>
 
         <div className="lg:tw-w-full lg:tw-max-w-xs">
           <ul className="tw-flex tw-flex-wrap tw-justify-center tw-gap-8 lg:tw-flex-col lg:tw-justify-start lg:tw-gap-4">
-            <li className="">
+            <li data-aos="fade-up" data-aos-delay={50} className="">
               <a
                 href="https://instagram.com/aryo.muzakki"
                 target="_blank"
@@ -157,7 +173,7 @@ const Contact = () => {
                 <span className="tw-ml-4">aryo.muzakki</span>
               </a>
             </li>
-            <li>
+            <li data-aos="fade-up" data-aos-delay={100}>
               <a
                 href="https://linkedin.com/in/aryomuzakki"
                 target="_blank"
@@ -172,7 +188,7 @@ const Contact = () => {
                 <span className="tw-ml-4">aryomuzakki</span>
               </a>
             </li>
-            <li>
+            <li data-aos="fade-up" data-aos-delay={150}>
               <a
                 href="https://github.com/aryomuzakki"
                 target="_blank"
@@ -187,7 +203,7 @@ const Contact = () => {
                 <span className="tw-ml-4">aryomuzakki</span>
               </a>
             </li>
-            <li>
+            <li data-aos="fade-up" data-aos-delay={200}>
               <a
                 href="mailto:aryo.muzakki@gmail.com"
                 target="_blank"
@@ -202,7 +218,7 @@ const Contact = () => {
                 <span className="tw-ml-4">aryo.muzakki@gmail.com</span>
               </a>
             </li>
-            <li>
+            <li data-aos="fade-up" data-aos-delay={250}>
               <a
                 href="tel:6281376799660"
                 target="_blank"
@@ -217,7 +233,7 @@ const Contact = () => {
                 <span className="tw-ml-4">+62 813 7679 9660</span>
               </a>
             </li>
-            <li>
+            <li data-aos="fade-up" data-aos-delay={300}>
               <a
                 href="https://wa.me/6281376799660"
                 target="_blank"

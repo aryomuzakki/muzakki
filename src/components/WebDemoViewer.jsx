@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import {
@@ -61,10 +62,11 @@ const WebDemoViewer = ({ url, title }) => {
         </>
       ) : (
         <>
-          <div className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-2">
-            <p className="">{title}</p>
+          <div className="tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-4">
+            <Link href="/">Home</Link>
+            <p className="tw-mx-auto">{title}</p>
             <div className="tw-flex tw-items-center tw-gap-4">
-              <p className="tw-text-sm">Viewport Sizes :</p>
+              <p className="tw-text-sm tw-text-opacity-70">Viewport Sizes :</p>
               <ul className="tw-flex tw-gap-2">
                 {Object.keys(VIEW_SIZES).map((item, idx) => {
                   return (
@@ -87,8 +89,8 @@ const WebDemoViewer = ({ url, title }) => {
           <div
             style={{
               ...(viewSize === "full"
-                ? { height: "calc(100vh - 1rem - 40px)" }
-                : { "min-height": "calc(100vh - 1rem - 40px)" }),
+                ? { height: "calc(100vh - 1rem - 60px)" }
+                : { "min-height": "calc(100vh - 60px)" }),
             }}
             // className="tw-w-full tw-max-w-[100vw]"
             className="dark"
@@ -111,7 +113,7 @@ const WebDemoViewer = ({ url, title }) => {
                 // ]}
                 allowResizingX
                 allowResizingY
-                className="tw-relative !tw-justify-start tw-py-4 tw-pl-4 tw-pr-8"
+                className="tw-relative !tw-justify-start tw-pl-4 tw-pr-8"
                 controlsClassName="tw-pr-4"
                 controlsContainerClassName="tw-w-full"
                 resizableContainerClassName=""

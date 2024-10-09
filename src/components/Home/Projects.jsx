@@ -10,6 +10,7 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
+import Link from "next/link";
 
 const Projects = () => {
   const [projectList, setProjectList] = useState(projectListJSON);
@@ -43,7 +44,10 @@ const Projects = () => {
       id="projects"
       className="tw-flex tw-w-full tw-scroll-mt-8 tw-flex-col tw-items-center tw-justify-evenly tw-bg-gradient-primary-2 tw-p-6 sm:tw-scroll-m-0 sm:tw-p-12 lg:tw-p-24"
     >
-      <div className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2">
+      <div
+        className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2"
+        data-aos="fade-up"
+      >
         <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
           Projects
         </h3>
@@ -56,6 +60,8 @@ const Projects = () => {
               <li
                 key={idx}
                 className="tw-flex tw-w-min tw-flex-col tw-gap-y-5 tw-rounded-md tw-bg-primary-800/50 tw-p-7"
+                data-aos="fade-up"
+                data-aos-delay={50 * idx}
               >
                 <div className="tw-w-80 tw-overflow-hidden tw-rounded-t">
                   {projectData?.image ? (
@@ -126,9 +132,8 @@ const Projects = () => {
                         .map((link, idx2) => {
                           return (
                             <li key={idx2} className="tw-text-primary-300">
-                              {link?.icon === "github" ? (
-                                ""
-                              ) : (
+                              {link?.icon === "github" && ""}
+                              {link?.url?.startsWith("http") ? (
                                 <a
                                   href={link?.url}
                                   target="_blank"
@@ -138,12 +143,23 @@ const Projects = () => {
                                   {/* heroicons:link-20-solid */}
                                   {/* prettier-ignore */}
                                   <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 20 20">
-                                  <g fill="currentColor">
-                                    <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865a.75.75 0 0 0 .977-1.138a2.5 2.5 0 0 1-.142-3.667z"></path>
-                                    <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138q.072.062.142.131a2.5 2.5 0 0 1 0 3.536l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865"></path>
-                                  </g>
-                                </svg>
+                                    <g fill="currentColor">
+                                      <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865a.75.75 0 0 0 .977-1.138a2.5 2.5 0 0 1-.142-3.667z"></path>
+                                      <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138q.072.062.142.131a2.5 2.5 0 0 1 0 3.536l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865"></path>
+                                    </g>
+                                  </svg>
                                 </a>
+                              ) : (
+                                <Link href={link?.url}>
+                                  {/* heroicons:link-20-solid */}
+                                  {/* prettier-ignore */}
+                                  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 20 20">
+                                    <g fill="currentColor">
+                                      <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865a.75.75 0 0 0 .977-1.138a2.5 2.5 0 0 1-.142-3.667z"></path>
+                                      <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138q.072.062.142.131a2.5 2.5 0 0 1 0 3.536l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865"></path>
+                                    </g>
+                                  </svg>
+                                </Link>
                               )}
                             </li>
                           );

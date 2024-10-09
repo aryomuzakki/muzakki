@@ -27,7 +27,10 @@ const Experiences = () => {
       id="experiences"
       className="tw-flex tw-w-full tw-scroll-mt-8 tw-flex-col tw-items-center tw-justify-evenly tw-bg-gradient-primary tw-p-6 sm:tw-scroll-m-0 sm:tw-p-12 lg:tw-p-24"
     >
-      <div className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2">
+      <div
+        className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2"
+        data-aos="fade-up"
+      >
         <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
           Experiences
         </h3>
@@ -72,6 +75,9 @@ const Experiences = () => {
                   </div>
                   <div
                     className={`${idx % 2 === 0 ? "tw-du-timeline-start md:!tw-mr-2 md:tw-text-end" : "tw-du-timeline-end"} !tw-mb-10 !tw-ml-2`}
+                    data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+                    data-aos-delay={50 * idx}
+                    data-aos-duration="600"
                   >
                     <time className="tw-font-mono tw-italic">
                       {expData.time}

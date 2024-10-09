@@ -2,6 +2,7 @@ import { Inter, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import "./components.css";
 import MouseLight from "@/components/MouseLight";
+import AOSWrapper from "@/components/Layout/AOSWrapper";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
         // className={`tw-bg-gradient-primary`}
       >
         <MouseLight />
+        <AOSWrapper />
         {children}
       </body>
     </html>

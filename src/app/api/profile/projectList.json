@@ -1,6 +1,22 @@
 [
   {
     "category": "website",
+    "time": "2024",
+    "role": "Fullstack Web Developer",
+    "title": "WFD RSA 2024",
+    "description": "A landing page specialized for The 36th World Federation of the Deaf Regional Secretariat for Asia Event in Yogyakarta. Build using HTML CSS and with Bootstrap CSS, but mainly custom CSS.",
+    "image": "",
+    "imageList": [],
+    "links": [
+      {
+        "icon": "website",
+        "url": "/project/wfdrsa2024/demo"
+      }
+    ],
+    "tags": ["Landing Page", "Microsite"]
+  },
+  {
+    "category": "website",
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Satya Terra Bhinneka University",
