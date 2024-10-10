@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import BlurIn from "../ui/blur-in";
 
 const NavContent = () => {
   return (
@@ -10,7 +11,7 @@ const NavContent = () => {
           href="#home"
           className="scroll-to-view tw-inline-block !tw-rounded-sm tw-px-4 tw-py-2 tw-transition hover:!tw-bg-transparent hover:tw-text-primary-500 focus:!tw-bg-transparent focus:!tw-text-primary-300 focus:!tw-outline-current"
         >
-          Home
+          <BlurIn word="Home" />
         </a>
       </li>
       <li className="">
@@ -18,7 +19,7 @@ const NavContent = () => {
           href="#stacks"
           className="scroll-to-view tw-inline-block !tw-rounded-sm tw-px-4 tw-py-2 tw-transition hover:!tw-bg-transparent hover:tw-text-primary-500 focus:!tw-bg-transparent focus:!tw-text-primary-300 focus:!tw-outline-current"
         >
-          Stacks
+          <BlurIn word="Stacks" />
         </a>
       </li>
       <li className="">
@@ -26,7 +27,7 @@ const NavContent = () => {
           href="#experiences"
           className="scroll-to-view tw-inline-block !tw-rounded-sm tw-px-4 tw-py-2 tw-transition hover:!tw-bg-transparent hover:tw-text-primary-500 focus:!tw-bg-transparent focus:!tw-text-primary-300 focus:!tw-outline-current"
         >
-          Experiences
+          <BlurIn word="Experiences" />
         </a>
       </li>
       <li className="">
@@ -34,7 +35,7 @@ const NavContent = () => {
           href="#projects"
           className="scroll-to-view tw-inline-block !tw-rounded-sm tw-px-4 tw-py-2 tw-transition hover:!tw-bg-transparent hover:tw-text-primary-500 focus:!tw-bg-transparent focus:!tw-text-primary-300 focus:!tw-outline-current"
         >
-          Projects
+          <BlurIn word="Projects" />
         </a>
       </li>
       <li className="">
@@ -42,7 +43,7 @@ const NavContent = () => {
           href="#contact"
           className="scroll-to-view tw-inline-block !tw-rounded-sm tw-px-4 tw-py-2 tw-transition hover:!tw-bg-transparent hover:tw-text-primary-500 focus:!tw-bg-transparent focus:!tw-text-primary-300 focus:!tw-outline-current"
         >
-          Contact
+          <BlurIn word="Contact" />
         </a>
       </li>
     </>
@@ -53,7 +54,7 @@ const Header = () => {
   const scrollToSection = (ev) => {
     ev.preventDefault();
 
-    const targetHash = new URL(ev.target.href).hash.replace("#", "");
+    const targetHash = new URL(ev.currentTarget.href).hash.replace("#", "");
 
     document.getElementById(targetHash).scrollIntoView({ behavior: "smooth" });
   };
@@ -76,7 +77,7 @@ const Header = () => {
     <header className="glass-bg-primary tw-fixed tw-z-10 tw-flex tw-w-full tw-justify-center tw-border-b tw-border-primary-800 tw-bg-opacity-75 tw-px-6 tw-py-3 sm:tw-px-12 lg:tw-px-24">
       <div className="tw-mr-auto tw-flex tw-items-center">
         <p className="tw-select-none tw-py-2 tw-font-semibold tw-text-primary-100">
-          M Aryo Muzakki
+          <BlurIn word="M Aryo Muzakki" />
         </p>
       </div>
       <nav className="tw-text-primary-100">

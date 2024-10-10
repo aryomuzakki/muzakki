@@ -36,7 +36,7 @@ const Experiences = () => {
         </h3>
       </div>
       <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-gap-x-6">
-        <ul className="tw-du-timeline tw-du-timeline-vertical tw-du-timeline-snap-icon max-md:tw-du-timeline-compact">
+        <ul className="tw-du-timeline tw-du-timeline-vertical tw-du-timeline-snap-icon tw-overflow-hidden max-md:tw-du-timeline-compact">
           {experienceList?.length > 0 &&
             experienceList.map((expData, idx) => {
               return (
