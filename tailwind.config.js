@@ -72,15 +72,9 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		animation: {
-  			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
   			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear'
   		},
   		keyframes: {
-  			'shimmer-slide': {
-  				to: {
-  					transform: 'translate(calc(100cqw - 100%), 0)'
-  				}
-  			},
   			'spin-around': {
   				'0%': {
   					transform: 'translateZ(0) rotate(0)'
@@ -95,7 +89,10 @@ module.exports = {
   					transform: 'translateZ(0) rotate(360deg)'
   				}
   			}
-  		}
+			},
+			screens: {
+				"xsm": "425px",
+			}
   	}
   },
   prefix: "tw-",

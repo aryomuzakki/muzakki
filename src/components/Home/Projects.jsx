@@ -48,7 +48,7 @@ const Projects = () => {
         className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2"
         data-aos="fade-up"
       >
-        <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
+        <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest tw-text-primary-100">
           Projects
         </h3>
       </div>
@@ -63,7 +63,7 @@ const Projects = () => {
                 data-aos="fade-up"
                 data-aos-delay={50 * idx}
               >
-                <div className="tw-w-80 tw-overflow-hidden tw-rounded-t">
+                <div className="xsm:tw-w-80 tw-w-64 tw-overflow-hidden tw-rounded-t">
                   {projectData?.image ? (
                     <button
                       className="tw-block"
@@ -87,12 +87,12 @@ const Projects = () => {
                     >
                       <img
                         src={projectData?.image}
-                        alt={projectData?.title}
+                        alt={"Thumbnail Project " + projectData?.title}
                         className="tw-h-full tw-w-full tw-object-contain tw-object-center tw-transition tw-duration-500 hover:tw-scale-105"
                       />
                     </button>
                   ) : (
-                    <div className="tw-relative tw-flex tw-aspect-video tw-w-80 tw-select-none tw-flex-col tw-items-center tw-justify-center tw-bg-gray-600">
+                    <div className="xsm:tw-w-80 tw-relative tw-flex tw-aspect-video tw-w-64 tw-select-none tw-flex-col tw-items-center tw-justify-center tw-bg-gray-600">
                       <div className="tw-absolute tw-inset-0"></div>
                       {/* mdi:image-off-outline */}
                       {/* prettier-ignore */}
@@ -105,7 +105,7 @@ const Projects = () => {
                     </div>
                   )}
                 </div>
-                <h4 className="tw-text-2xl tw-font-bold">
+                <h4 className="tw-text-2xl tw-font-bold tw-text-primary-100">
                   {projectData?.title}
                 </h4>
                 <p className="tw-flex-grow tw-text-primary-300">

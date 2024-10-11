@@ -15,7 +15,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+    <html
+      lang="en"
+      className="dark xsm:tw-text-[16px] tw-text-[14px]"
+      style={{ colorScheme: "dark" }}
+    >
       <head>
         <link
           rel="icon"

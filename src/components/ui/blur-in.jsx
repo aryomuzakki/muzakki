@@ -22,7 +22,7 @@ const BlurIn = ({
       transition={{ duration }}
       variants={combinedVariants}
       className={cn(
-        "tw-tracking-[-0.02em]",
+        " ",
         className
       )}>
       {word}

@@ -19,6 +19,7 @@ export default function HyperText({
   },
 
   className,
+  wrapperClassName,
   animateOnLoad = true
 }) {
   const [displayText, setDisplayText] = useState(text.split(""));
@@ -58,7 +59,7 @@ export default function HyperText({
 
   return (
     (<div
-      className="tw-overflow-hidden tw-py-2 tw-flex tw-cursor-default tw-scale-100"
+      className={cn("tw-overflow-hidden tw-py-2 tw-flex tw-cursor-default tw-scale-100", wrapperClassName)}
       onMouseEnter={triggerAnimation}>
       <AnimatePresence mode="wait">
         {displayText.map((letter, i) => (

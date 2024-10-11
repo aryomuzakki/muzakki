@@ -13,21 +13,47 @@ const Hero = () => {
     >
       <Particles />
       <div className="glass-bg-primary-2 tw-pointer-events-none tw-relative tw-z-[1] tw-max-w-screen-sm tw-overflow-hidden tw-rounded-lg tw-p-6 md:tw-max-w-3xl lg:tw-max-w-4xl">
-        <h1 className="tw-pointer-events-auto tw-text-4xl tw-font-extrabold tw-uppercase tw-tracking-wider">
+        <h1 className="tw-pointer-events-auto tw-mb-2 tw-flex tw-flex-wrap tw-text-4xl tw-font-extrabold tw-uppercase tw-tracking-wider tw-text-primary-100">
           <HyperText
-            className="!tw-font-[inherit]"
-            duration="120"
-            text="Muhammad Aryo Muzakki"
+            wrapperClassName="!tw-py-0"
+            className="tw-flex-shrink-0 !tw-font-[inherit]"
+            duration="100"
+            text="Muhammad "
+          />
+          <HyperText
+            wrapperClassName="!tw-py-0"
+            className="tw-flex-shrink-0 !tw-font-[inherit]"
+            duration="100"
+            text="Aryo "
+          />
+          <HyperText
+            wrapperClassName="!tw-py-0"
+            className="tw-flex-shrink-0 !tw-font-[inherit]"
+            duration="100"
+            text="Muzakki"
           />
         </h1>
-        <h2 className="tw-pointer-events-auto tw-mb-3 tw-text-xl tw-uppercase tw-tracking-widest">
+        <h2 className="tw-pointer-events-auto tw-mb-5 tw-flex tw-flex-wrap tw-text-xl tw-uppercase tw-tracking-widest tw-text-primary-100">
           <HyperText
-            className="!tw-font-[inherit]"
-            duration="120"
-            text="FRONT-END / BACK-END WEB DEVELOPER"
+            wrapperClassName="!tw-py-0"
+            className="tw-flex-shrink-0 !tw-font-[inherit]"
+            duration="100"
+            text="FRONT-END / "
+          />
+          <HyperText
+            wrapperClassName="!tw-py-0"
+            className="tw-flex-shrink-0 !tw-font-[inherit]"
+            duration="100"
+            text="BACK-END "
+          />
+          <HyperText
+            wrapperClassName="!tw-py-0"
+            className="tw-flex-shrink-0 !tw-font-[inherit]"
+            duration="100"
+            text="WEB DEVELOPER"
           />
         </h2>
-        <p className="tw-pointer-events-auto tw-mb-5 tw-leading-6">
+        <p className="tw-pointer-events-auto tw-mb-5 tw-leading-6 tw-text-primary-100">
           <BlurIn
             word={`
               I'm the person who will produce a user-friendly, responsive websites
@@ -37,15 +63,15 @@ const Hero = () => {
               `}
           />
         </p>
-        <div className="tw-flex tw-translate-y-1.5 tw-items-center">
+        <div className="tw-flex tw-translate-y-1.5 tw-flex-wrap tw-items-center tw-gap-4">
           <BlurFade className="tw-flex" inView>
             <a
               href="#contact"
-              className="scroll-to-view tw-relative tw-mr-4 tw-overflow-hidden tw-rounded-[calc(var(--radius)_+_0.125rem)] tw-px-0.5 tw-py-0.5 tw-transition tw-duration-200 hover:tw-scale-105 active:tw-scale-95"
+              className="scroll-to-view tw-relative tw-overflow-hidden tw-rounded-[calc(var(--radius)_+_0.125rem)] tw-px-0.5 tw-py-0.5 tw-text-primary-100 tw-transition tw-duration-200 hover:tw-scale-105 active:tw-scale-95"
               rel="noopener noreferrer"
             >
               <span className="tw-absolute tw-inset-[-1000%] tw-animate-[spin_2s_linear_infinite] tw-bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="btn-primary tw-inline-flex tw-h-full tw-w-full tw-cursor-pointer tw-items-center tw-justify-center tw-rounded-full tw-bg-slate-950 tw-px-3 tw-py-1 tw-text-sm tw-font-medium tw-text-white tw-backdrop-blur-3xl hover:!tw-scale-100">
+              <span className="btn-primary tw-inline-flex tw-h-full tw-w-full tw-cursor-pointer tw-items-center tw-justify-center tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-medium tw-backdrop-blur-3xl hover:!tw-scale-100">
                 {/* mdi:contact */}
                 {/* prettier-ignore */}
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" className="tw-mr-2">

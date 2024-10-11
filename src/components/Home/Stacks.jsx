@@ -33,14 +33,14 @@ const Stacks = () => {
         className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2"
         data-aos="fade-up"
       >
-        <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
+        <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest tw-text-primary-100">
           Stacks
         </h3>
       </div>
       <ul className="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-gap-x-8">
         {stackList?.length > 0 &&
           stackList.map((stackData, idx) => {
-            return (  
+            return (
               <li
                 key={idx}
                 className="tags tw-mb-6 tw-flex tw-w-max tw-items-center tw-rounded-lg tw-bg-primary-800/50 tw-px-4 tw-pb-2.5 tw-pt-3 tw-uppercase tw-leading-none tw-text-primary-50 tw-transition"

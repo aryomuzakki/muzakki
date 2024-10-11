@@ -31,12 +31,12 @@ const Experiences = () => {
         className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2"
         data-aos="fade-up"
       >
-        <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
+        <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest tw-text-primary-100">
           Experiences
         </h3>
       </div>
       <div className="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-gap-x-6">
-        <ul className="tw-du-timeline tw-du-timeline-vertical tw-du-timeline-snap-icon tw-overflow-hidden max-md:tw-du-timeline-compact">
+        <ul className="tw-du-timeline tw-du-timeline-vertical tw-du-timeline-snap-icon tw-overflow-hidden tw-text-primary-100 max-md:tw-du-timeline-compact">
           {experienceList?.length > 0 &&
             experienceList.map((expData, idx) => {
               return (

@@ -39,7 +39,7 @@ const Contact = () => {
         className="tw-my-8 tw-w-full tw-border-b-2 tw-border-b-primary-200 tw-pb-2"
         data-aos="fade-up"
       >
-        <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest">
+        <h3 className="tw-text-2xl tw-font-extrabold tw-uppercase tw-tracking-widest tw-text-primary-100">
           Contact
         </h3>
       </div>
@@ -157,7 +157,7 @@ const Contact = () => {
         </div>
 
         <div className="lg:tw-w-full lg:tw-max-w-xs">
-          <ul className="tw-flex tw-flex-wrap tw-justify-center tw-gap-8 lg:tw-flex-col lg:tw-justify-start lg:tw-gap-4">
+          <ul className="tw-flex tw-flex-wrap tw-justify-center tw-gap-8 tw-text-primary-100 lg:tw-flex-col lg:tw-justify-start lg:tw-gap-4">
             <li data-aos="fade-up" data-aos-delay={50} className="">
               <a
                 href="https://instagram.com/aryo.muzakki"
