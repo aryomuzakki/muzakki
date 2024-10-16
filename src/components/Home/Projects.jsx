@@ -63,7 +63,7 @@ const Projects = () => {
                 data-aos="fade-up"
                 data-aos-delay={50 * idx}
               >
-                <div className="xsm:tw-w-80 tw-w-64 tw-overflow-hidden tw-rounded-t">
+                <div className="tw-w-[70vw] tw-overflow-hidden tw-rounded-t xsm:tw-w-80">
                   {projectData?.image ? (
                     <button
                       className="tw-block"
@@ -92,7 +92,7 @@ const Projects = () => {
                       />
                     </button>
                   ) : (
-                    <div className="xsm:tw-w-80 tw-relative tw-flex tw-aspect-video tw-w-64 tw-select-none tw-flex-col tw-items-center tw-justify-center tw-bg-gray-600">
+                    <div className="tw-relative tw-flex tw-aspect-video tw-w-[70vw] tw-select-none tw-flex-col tw-items-center tw-justify-center tw-bg-gray-600 xsm:tw-w-80">
                       <div className="tw-absolute tw-inset-0"></div>
                       {/* mdi:image-off-outline */}
                       {/* prettier-ignore */}
