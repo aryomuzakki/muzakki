@@ -12,6 +12,8 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import Link from "next/link";
 
+import SILoader from "../SILoader";
+
 const Projects = () => {
   const [projectList, setProjectList] = useState(projectListJSON);
 
@@ -125,15 +127,28 @@ const Projects = () => {
                         );
                       })}
                   </ul>
-                  <ul>
+                  <ul className="tw-flex tw-gap-x-2">
                     {projectData?.links?.length > 0 &&
                       projectData.links
                         .filter((link) => link?.url)
                         .map((link, idx2) => {
                           return (
                             <li key={idx2} className="tw-text-primary-300">
-                              {link?.icon === "github" && ""}
-                              {link?.url?.startsWith("http") ? (
+                              {link?.icon === "github" && (
+                                <a
+                                href={link?.url}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className=""
+                              >
+                                {/* prettier-ignore */}
+                                <SILoader iconName="SiGithub" />
+                                <span className="tw-sr-only">
+                                  Open {projectData?.title} Github Repository
+                                </span>
+                              </a>
+                              )}
+                              {(link?.icon !== "github" && link?.url?.startsWith("http")) ? (
                                 <a
                                   href={link?.url}
                                   target="_blank"
@@ -152,7 +167,7 @@ const Projects = () => {
                                     Open {projectData?.title}
                                   </span>
                                 </a>
-                              ) : (
+                              ) : link?.icon !== "github" && (
                                 <Link href={link?.url}>
                                   {/* heroicons:link-20-solid */}
                                   {/* prettier-ignore */}
