@@ -61,7 +61,7 @@ export default function HyperText({
     (<div
       className={cn("tw-overflow-hidden tw-py-2 tw-flex tw-cursor-default tw-scale-100", wrapperClassName)}
       onMouseEnter={triggerAnimation}>
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {displayText.map((letter, i) => (
           <motion.span
             key={i}

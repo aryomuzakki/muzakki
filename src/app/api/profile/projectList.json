@@ -1,6 +1,46 @@
 [
   {
-    "category": "website",
+    "categories": ["website", "desktop app"],
+    "time": "2024",
+    "role": "Fullstack Developer",
+    "title": "Timer Countdown",
+    "description": "A timer to be used at a presentation or a countdown to something. Using Tauri, it can be installed as Desktop App while it is still available as a website",
+    "image": "",
+    "imageList": [],
+    "links": [
+      {
+        "icon": "github",
+        "url": "https://github.com/aryomuzakki/tauri-timer-countdown"
+      },
+      {
+        "icon": "website",
+        "url": "https://timer-muzakki.vercel.app"
+      }
+    ],
+    "tags": ["Tools"]
+  },
+  {
+    "categories": ["website"],
+    "time": "2024",
+    "role": "Fullstack Web Developer",
+    "title": "QR Generator & Scanner",
+    "description": "This tool can generate QR Code with costumizable color, icon, shape, and other settings. It can also scan a QR Code with camera or upload an image containing a QR Code",
+    "image": "",
+    "imageList": [],
+    "links": [
+      {
+        "icon": "github",
+        "url": "https://github.com/aryomuzakki/qr-code-generator"
+      },
+      {
+        "icon": "website",
+        "url": "https://qrcode-muzakki.vercel.app"
+      }
+    ],
+    "tags": ["Tools"]
+  },
+  {
+    "categories": ["website"],
     "time": "2024",
     "role": "Fullstack Web Developer",
     "title": "WFD RSA 2024",
@@ -16,7 +56,7 @@
     "tags": ["Landing Page", "Microsite"]
   },
   {
-    "category": "website",
+    "categories": ["website"],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Satya Terra Bhinneka University",
@@ -34,7 +74,7 @@
     "tags": ["Company Profile"]
   },
   {
-    "category": "website",
+    "categories": ["website"],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Matakail Communication",
@@ -52,7 +92,7 @@
     "tags": ["Company Profile"]
   },
   {
-    "category": "website",
+    "categories": ["website"],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Halal Center Indonesia",
@@ -70,7 +110,7 @@
     "tags": ["Company Profile"]
   },
   {
-    "category": "website",
+    "categories": ["website"],
     "time": "2021",
     "role": "Fullstack Web Developer",
     "title": "Azisten",
@@ -88,7 +128,7 @@
     "tags": ["Company Profile"]
   },
   {
-    "category": "website",
+    "categories": ["website"],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Digital Registration System",
@@ -106,7 +146,7 @@
     "tags": ["QR Ticketing"]
   },
   {
-    "category": "website",
+    "categories": ["website"],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Lucky Draw - Spin Wheel",
@@ -124,7 +164,7 @@
     "tags": ["Lucky Draw"]
   },
   {
-    "category": "website",
+    "categories": ["website"],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Lucky Draw - Random Number",
@@ -142,7 +182,7 @@
     "tags": ["Lucky Draw"]
   },
   {
-    "category": "website",
+    "categories": ["website"],
     "time": "2023",
     "role": "Fullstack Web Developer",
     "title": "PDF Viewer",

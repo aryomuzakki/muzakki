@@ -15,9 +15,9 @@ const Particles = () => {
         range: 150,
         proximity: 100,
         parallax: true,
-        parallaxLayer: [4, 8, 10, 11],
-        minSpeed: 0.05,
-        maxSpeed: 1,
+        parallaxLayer: [12, 26, 32, 38],
+        minSpeed: 0.02,
+        maxSpeed: 0.5,
       };
 
       const theParticles = new Particle(".interactive-particles", particleOpts);
@@ -30,7 +30,9 @@ const Particles = () => {
 
   return (
     <>
-      <div className="interactive-particles tw-absolute tw-inset-0 tw-h-full tw-w-full"></div>
+      <div className="tw-absolute tw-inset-0 tw-h-full tw-w-full tw-overflow-hidden">
+        <div className="interactive-particles tw-absolute tw-left-[-10%] tw-top-[-10%] tw-w-[120%] tw-h-[120%]"></div>
+      </div>
       <div className="tw-absolute tw-bottom-8 tw-left-8 tw-z-[1] tw-flex tw-gap-4 tw-text-sm tw-font-extralight tw-text-primary-200 tw-opacity-50">
         <button
           className="hover:tw-text-primary-400"

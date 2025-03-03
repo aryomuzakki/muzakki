@@ -12,7 +12,7 @@ const PortfolioPDF = () => {
   const fileData = pdfFileDataURL(
     path.join(
       process.cwd(),
-      "public/data/portfolio_muhammad_aryo_muzakki_may_2023.pdf",
+      "public/data/portfolio_muhammad_aryo_muzakki.pdf",
     ),
   );
 

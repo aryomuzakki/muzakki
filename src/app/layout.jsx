@@ -1,12 +1,22 @@
-import { Inter, Nunito_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import "./components.css";
 import MouseLight from "@/components/MouseLight";
 import AOSWrapper from "@/components/Layout/AOSWrapper";
 
-// const inter = Inter({ subsets: ["latin"] });
-
-const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
+const nunitoSans = localFont({
+  src: [
+    {
+      path: "../font/Nunito_Sans/nunito sans-latin.woff2",
+      style: "normal",
+    },
+    {
+      path: "../font/Nunito_Sans/nunito sans-italic-latin.woff2",
+      style: "italic",
+    },
+  ],
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Muhammad Aryo Muzakki",
