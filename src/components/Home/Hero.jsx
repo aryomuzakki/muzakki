@@ -11,7 +11,9 @@ const Hero = () => {
       id="home"
       className="tw-relative tw-flex tw-min-h-screen tw-w-full tw-items-center tw-justify-between tw-bg-gradient-primary tw-p-6 sm:tw-p-12 lg:tw-p-24"
     >
-      <Particles />
+      <div className="tw-fixed tw-inset-0">
+        <Particles />
+      </div>
       <div className="glass-bg-primary-2 tw-pointer-events-none tw-relative tw-z-[1] tw-max-w-screen-sm tw-overflow-hidden tw-rounded-lg tw-p-6 md:tw-max-w-3xl lg:tw-max-w-4xl">
         <h1 className="tw-pointer-events-auto tw-mb-2 tw-flex tw-flex-wrap tw-text-4xl tw-font-extrabold tw-uppercase tw-tracking-wider tw-text-primary-100">
           <HyperText
