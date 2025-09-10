@@ -11,11 +11,13 @@ export default function Home() {
     <main className="tw-min-h-screen">
       <Header />
       <Hero />
-      <Stacks />
-      <Experiences />
-      <Projects />
-      <Contact />
-      <Footer />
+      <div className="tw-relative tw-z-0">
+        <Stacks />
+        <Experiences />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 }
