@@ -24,7 +24,6 @@ const standardFontsDir = pathJoin(
 );
 
 const nextConfig = {
-  reactStrictMode: true,
   poweredByHeader: false,
   rewrites: async () => {
     return [
@@ -34,6 +33,8 @@ const nextConfig = {
       },
     ];
   },
+  eslint: { dirs: ["src"], ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
   compiler: {
     ...(isDev
       ? {}

@@ -190,9 +190,7 @@
     "title": "Digital Registration System",
     "description": "An Online Registration System and Check-in using QR Ticket.",
     "image": "",
-    "imageList": [
-      ""
-    ],
+    "imageList": [],
     "links": [
       {
         "icon": "website",
@@ -212,9 +210,7 @@
     "title": "Lucky Draw - Spin Wheel",
     "description": "A digital spin wheel to randomly pick a text.",
     "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1758047186/me/muzakki/portfolio/web_spinwheel.png",
-    "imageList": [
-      ""
-    ],
+    "imageList": [],
     "links": [
       {
         "icon": "website",
@@ -234,9 +230,7 @@
     "title": "Lucky Draw - Random Number",
     "description": "Randomly pick a number in 0 to 3 digits.",
     "image": "",
-    "imageList": [
-      ""
-    ],
+    "imageList": [],
     "links": [
       {
         "icon": "website",
@@ -256,9 +250,7 @@
     "title": "PDF Viewer",
     "description": "PDF Viewer built with Next JS to read pdf file. You can see document outline, jump to page, zooming, download, and highlight text. Using this viewer component will avoid issues made by IDM Extension",
     "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1758047185/me/muzakki/portfolio/web_pdfviewer.png",
-    "imageList": [
-      ""
-    ],
+    "imageList": [],
     "links": [
       {
         "icon": "website",
