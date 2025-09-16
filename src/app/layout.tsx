@@ -15,7 +15,6 @@ const nunitoSans = localFont({
       style: "italic",
     },
   ],
-  subsets: ["latin"],
 });
 
 export const metadata = {

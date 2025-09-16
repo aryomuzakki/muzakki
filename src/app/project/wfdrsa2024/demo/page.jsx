@@ -6,7 +6,7 @@ const ProjectDemo = () => {
     <div>
       <Suspense>
         <WebDemoViewer
-          url="https://wfdrsa2024.vercel.app/"
+          url="https://wfdrsa2024.muzakki.id/"
           title="WFD RSA 2024"
         />
       </Suspense>

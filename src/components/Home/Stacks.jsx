@@ -43,11 +43,11 @@ const Stacks = () => {
             return (
               <li
                 key={idx}
-                className="tags tw-mb-6 tw-flex tw-w-max tw-items-center tw-rounded-lg tw-bg-primary-800/50 tw-px-4 tw-pb-2.5 tw-pt-3 tw-uppercase tw-leading-none tw-text-primary-50 tw-transition"
+                className="tags tw-mb-6 tw-flex tw-w-max tw-items-center tw-rounded-lg tw-bg-primary-800/50 tw-px-4 tw-pb-2.5 tw-pt-3 tw-uppercase tw-leading-none tw-transition tw-text-current"
                 data-aos="fade-up"
                 data-aos-delay={50 * idx}
               >
-                <SILoader iconName={stackData.stackIconName} />
+                <SILoader iconName={stackData.stackIconName} color="default" />
                 {stackData.stackName}
               </li>
             );

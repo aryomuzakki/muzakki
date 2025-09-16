@@ -6,6 +6,15 @@ import BlurIn from "../ui/blur-in";
 const Particles = dynamic(() => import("./Particles"), { ssr: false });
 
 const Hero = () => {
+  const yearsExperience = (
+    input: string | Date = new Date(2021, 3, 1),
+  ): string => {
+    const years =
+      (Date.now() - new Date(input).getTime()) / (1000 * 60 * 60 * 24 * 365);
+    const half = Math.round(years * 2) / 2; // round to nearest 0.5
+    return half % 1 === 0 ? String(half | 0) : String(half);
+  };
+
   return (
     <section
       id="home"
@@ -19,19 +28,19 @@ const Hero = () => {
           <HyperText
             wrapperClassName="!tw-py-0"
             className="tw-flex-shrink-0 !tw-font-[inherit]"
-            duration="100"
+            duration={100}
             text="Muhammad "
           />
           <HyperText
             wrapperClassName="!tw-py-0"
             className="tw-flex-shrink-0 !tw-font-[inherit]"
-            duration="100"
+            duration={100}
             text="Aryo "
           />
           <HyperText
             wrapperClassName="!tw-py-0"
             className="tw-flex-shrink-0 !tw-font-[inherit]"
-            duration="100"
+            duration={100}
             text="Muzakki"
           />
         </h1>
@@ -39,30 +48,25 @@ const Hero = () => {
           <HyperText
             wrapperClassName="!tw-py-0"
             className="tw-flex-shrink-0 !tw-font-[inherit]"
-            duration="100"
-            text="FRONT-END / "
+            duration={100}
+            text="FULL-STACK "
           />
           <HyperText
             wrapperClassName="!tw-py-0"
             className="tw-flex-shrink-0 !tw-font-[inherit]"
-            duration="100"
-            text="BACK-END "
+            duration={100}
+            text="NEXT JS "
           />
           <HyperText
             wrapperClassName="!tw-py-0"
             className="tw-flex-shrink-0 !tw-font-[inherit]"
-            duration="100"
+            duration={100}
             text="WEB DEVELOPER"
           />
         </h2>
         <p className="tw-pointer-events-auto tw-mb-5 tw-leading-6 tw-text-primary-100">
           <BlurIn
-            word={`
-              I'm the person who will produce a user-friendly, responsive websites
-              that leave a lasting impression. I'll provide a well-structured,
-              maintainable code, and leveraging modern technology to upscale your
-              business.
-              `}
+            word={`Frontend-focused Fullstack Web Developer with ${yearsExperience()}+ years of experience building responsive, high-performance websites using Next.js, React, and TailwindCSS. Passionate about polished UIs, animations, and optimizing for speed, SEO, and accessibility.`}
           />
         </p>
         <div className="tw-flex tw-translate-y-1.5 tw-flex-wrap tw-items-center tw-gap-4">

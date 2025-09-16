@@ -7,9 +7,10 @@
     "title": "Web Developer",
     "brief": "",
     "briefList": [
-      "Developing and maintaning websites of the company and clients.",
-      "Establishing responsive and dynamic websites that guarantees fast loading, and maximum user experience with Next JS and using Wordpress as Headless CMS.",
-      "Managing Ubuntu server running pm2 and Open Lite Speed or Nginx"
+      "Built and maintained dynamic websites for clients, delivering fast, responsive interfaces with Next.js and custom/Headless CMS integrations.",
+      "Implemented micro-animations and interactive effects using Framer Motion, enhancing user engagement and modern UI feel.",
+      "Optimized applications for SEO and Core Web Vitals, ensuring top performance across devices.",
+      "Deployed and managed production environments on Ubuntu servers with pm2 and Nginx, ensuring stability and uptime"
     ]
   },
   {
@@ -32,8 +33,8 @@
     "title": "Junior Web Developer (Intern)",
     "brief": "",
     "briefList": [
-      "Making Web Templates using Bootstrap CSS Framework, and JQuery.",
-      "Developing a website in collaboration with a team using PHP language."
+      "Developed website templates with Bootstrap and jQuery.",
+      "Collaborated in a team to deliver a PHP-based website project"
     ]
   },
   {

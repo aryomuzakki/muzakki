@@ -12,14 +12,6 @@
     "stackIconName": "SiJavascript"
   },
   {
-    "stackName": "Golang",
-    "stackIconName": "SiGo"
-  },
-  {
-    "stackName": "PHP",
-    "stackIconName": "SiPhp"
-  },
-  {
     "stackName": "Node JS",
     "stackIconName": "SiNodedotjs"
   },
@@ -44,12 +36,20 @@
     "stackIconName": "SiTailwindcss"
   },
   {
-    "stackName": "SASS/SCSS",
-    "stackIconName": "SiSass"
+    "stackName": "Shadcn UI",
+    "stackIconName": "SiShadcnui"
   },
   {
-    "stackName": "Gorilla Mux",
-    "stackIconName": "SiGorillamux"
+    "stackName": "Motion",
+    "stackIconName": "SiMotionDev"
+  },
+  {
+    "stackName": "Tanstack Query",
+    "stackIconName": "SiTanstackQuery"
+  },
+  {
+    "stackName": "SASS/SCSS",
+    "stackIconName": "SiSass"
   },
   {
     "stackName": "Docker",
