@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 const BlurIn = ({
   word,
-  className,
-  variant,
+  className = "",
+  variant = undefined,
   duration = 1
 }) => {
   const defaultVariants = {

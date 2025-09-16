@@ -1,11 +1,36 @@
 [
   {
-    "categories": ["website", "desktop app"],
+    "categories": [
+      "website",
+      "company profile"
+    ],
+    "time": "2025",
+    "role": "Fullstack Web Developer",
+    "title": "Yayasan Perguruan Sultan Iskandar Muda",
+    "description": "I rebuilt the official site of Yayasan Perguruan Sultan Iskandar Muda, transforming it into a modern, responsive platform with Next.js and Tailwind CSS. I also created a custom CMS to let administrators easily manage content, announcements, and publications",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1758044315/me/muzakki/portfolio/web_ypsim.png",
+    "imageList": [],
+    "links": [
+      {
+        "icon": "website",
+        "url": "https://ypsim.id"
+      }
+    ],
+    "tags": [
+      "Company Profile",
+      "School"
+    ]
+  },
+  {
+    "categories": [
+      "website",
+      "desktop app"
+    ],
     "time": "2024",
     "role": "Fullstack Developer",
     "title": "Timer Countdown",
     "description": "A timer to be used at a presentation or a countdown to something. Using Tauri, it can be installed as Desktop App while it is still available as a website",
-    "image": "",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1758046014/me/muzakki/portfolio/web_timer.png",
     "imageList": [],
     "links": [
       {
@@ -14,19 +39,25 @@
       },
       {
         "icon": "website",
-        "url": "https://timer-muzakki.vercel.app"
+        "url": "https://timer.muzakki.id"
       }
     ],
-    "tags": ["Tools"]
+    "tags": [
+      "Tools"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2024",
     "role": "Fullstack Web Developer",
     "title": "QR Generator & Scanner",
     "description": "This tool can generate QR Code with costumizable color, icon, shape, and other settings. It can also scan a QR Code with camera or upload an image containing a QR Code",
-    "image": "",
-    "imageList": [],
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1758043441/me/muzakki/portfolio/web_qrcode.png",
+    "imageList": [
+      "https://res.cloudinary.com/aryomuzakki/image/upload/v1758047726/me/muzakki/portfolio/web_qrcode_scan.png"
+    ],
     "links": [
       {
         "icon": "github",
@@ -34,18 +65,22 @@
       },
       {
         "icon": "website",
-        "url": "https://qrcode-muzakki.vercel.app"
+        "url": "https://qrcode.muzakki.id"
       }
     ],
-    "tags": ["Tools"]
+    "tags": [
+      "Tools"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2024",
     "role": "Fullstack Web Developer",
     "title": "WFD RSA 2024",
     "description": "A landing page specialized for The 36th World Federation of the Deaf Regional Secretariat for Asia Event in Yogyakarta. Build using HTML CSS and with Bootstrap CSS, but mainly custom CSS.",
-    "image": "",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1758043662/me/muzakki/portfolio/web_wfdrsa2024.png",
     "imageList": [],
     "links": [
       {
@@ -53,10 +88,15 @@
         "url": "/project/wfdrsa2024/demo"
       }
     ],
-    "tags": ["Landing Page", "Microsite"]
+    "tags": [
+      "Landing Page",
+      "Microsite"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Satya Terra Bhinneka University",
@@ -71,10 +111,14 @@
         "url": "https://satyaterrabhinneka.ac.id"
       }
     ],
-    "tags": ["Company Profile"]
+    "tags": [
+      "Company Profile"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Matakail Communication",
@@ -89,10 +133,14 @@
         "url": "https://matakailcommunication.com"
       }
     ],
-    "tags": ["Company Profile"]
+    "tags": [
+      "Company Profile"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Halal Center Indonesia",
@@ -104,13 +152,17 @@
     "links": [
       {
         "icon": "website",
-        "url": "https://halal-center-indonesia.vercel.app"
+        "url": "https://halal-center-indonesia.muzakki.id"
       }
     ],
-    "tags": ["Company Profile"]
+    "tags": [
+      "Company Profile"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2021",
     "role": "Fullstack Web Developer",
     "title": "Azisten",
@@ -125,10 +177,14 @@
         "url": "https://web.archive.org/web/20210512035654/https://azisten.com/"
       }
     ],
-    "tags": ["Company Profile"]
+    "tags": [
+      "Company Profile"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Digital Registration System",
@@ -143,15 +199,19 @@
         "url": ""
       }
     ],
-    "tags": ["QR Ticketing"]
+    "tags": [
+      "QR Ticketing"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Lucky Draw - Spin Wheel",
     "description": "A digital spin wheel to randomly pick a text.",
-    "image": "",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1758047186/me/muzakki/portfolio/web_spinwheel.png",
     "imageList": [
       ""
     ],
@@ -161,10 +221,14 @@
         "url": ""
       }
     ],
-    "tags": ["Lucky Draw"]
+    "tags": [
+      "Lucky Draw"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2022",
     "role": "Fullstack Web Developer",
     "title": "Lucky Draw - Random Number",
@@ -179,15 +243,19 @@
         "url": ""
       }
     ],
-    "tags": ["Lucky Draw"]
+    "tags": [
+      "Lucky Draw"
+    ]
   },
   {
-    "categories": ["website"],
+    "categories": [
+      "website"
+    ],
     "time": "2023",
     "role": "Fullstack Web Developer",
     "title": "PDF Viewer",
-    "description": "PDF Viewer built with Next JS to read pdf file. You can see document outline, jump to page, zooming, download, and highlight text. File will not be auto-downloaded by IDM",
-    "image": "",
+    "description": "PDF Viewer built with Next JS to read pdf file. You can see document outline, jump to page, zooming, download, and highlight text. Using this viewer component will avoid issues made by IDM Extension",
+    "image": "https://res.cloudinary.com/aryomuzakki/image/upload/v1758047185/me/muzakki/portfolio/web_pdfviewer.png",
     "imageList": [
       ""
     ],
@@ -197,6 +265,8 @@
         "url": ""
       }
     ],
-    "tags": ["Tools"]
+    "tags": [
+      "Tools"
+    ]
   }
 ]
