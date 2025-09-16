@@ -3,6 +3,7 @@ import "./globals.css";
 import "./components.css";
 import MouseLight from "@/components/MouseLight";
 import AOSWrapper from "@/components/Layout/AOSWrapper";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const nunitoSans = localFont({
   src: [
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className="dark xsm:tw-text-[16px] tw-text-[14px]"
+      className="dark tw-text-[14px] xsm:tw-text-[16px]"
       style={{ colorScheme: "dark" }}
     >
       <head>
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
         <AOSWrapper />
         {children}
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_SITE_ENV === "production" && process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
     </html>
   );
 }
