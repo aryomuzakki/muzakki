@@ -12,6 +12,10 @@
     "stackIconName": "SiJavascript"
   },
   {
+    "stackName": "Typescript",
+    "stackIconName": "SiTypescript"
+  },
+  {
     "stackName": "Node JS",
     "stackIconName": "SiNodedotjs"
   },
