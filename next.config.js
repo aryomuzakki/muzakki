@@ -1,7 +1,4 @@
-/** @type {import("next").NextConfig} */
-
 const { join: pathJoin, dirname: pathDirname } = require("path");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const fs = require("fs");
 
 const isDev = process.env.NODE_ENV === "development";
@@ -14,15 +11,14 @@ const publicDir = "./public/dist/js/";
 fs.mkdirSync(publicDir, { recursive: true });
 fs.copyFileSync(pdfWorker, pathJoin(publicDir, "pdf.worker.min.js"));
 
-const cMapsDir = pathJoin(
-  pathDirname(require.resolve("pdfjs-dist/package.json")),
-  "cmaps",
-);
-const standardFontsDir = pathJoin(
-  pathDirname(require.resolve("pdfjs-dist/package.json")),
-  "standard_fonts",
-);
+// copy cmaps and fonts to /public (since Turbopack has no CopyWebpackPlugin)
+const cMapsDir = pathJoin(pdfjsDistPath, "cmaps");
+const standardFontsDir = pathJoin(pdfjsDistPath, "standard_fonts");
 
+fs.cpSync(cMapsDir, "./public/cmaps", { recursive: true });
+fs.cpSync(standardFontsDir, "./public/standard_fonts", { recursive: true });
+
+/** @type {import("next").NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
   rewrites: async () => {
@@ -44,26 +40,10 @@ const nextConfig = {
           },
         }),
   },
-  webpack: (config, options) => {
-    // for react-pdf to work
-    config.resolve.alias.canvas = false;
-
-    config.plugins.push(
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: cMapsDir,
-            to: "cmaps/",
-          },
-          {
-            from: standardFontsDir,
-            to: "standard_fonts/",
-          },
-        ],
-      }),
-    );
-
-    return config;
+  turbopack: {
+    resolveAlias: {
+      canvas: "false",
+    },
   },
 };
 
