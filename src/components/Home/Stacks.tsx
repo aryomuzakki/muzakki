@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from "react";
 import SILoader from "../SILoader";
-
-import stackListJSON from "@/app/api/profile/stackList.json";
+import { stackList as stackListData } from "@/app/api/profile/stackList";
 
 const Stacks = () => {
-  const [stackList, setStackList] = useState(stackListJSON);
+  const [stackList, setStackList] = useState(stackListData);
 
   useEffect(() => {
     (async () => {
@@ -38,12 +37,13 @@ const Stacks = () => {
         </h3>
       </div>
       <ul className="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-gap-x-8">
-        {stackList?.length > 0 &&
+        {stackList &&
+          stackList?.length > 0 &&
           stackList.map((stackData, idx) => {
             return (
               <li
                 key={idx}
-                className="tags tw-mb-6 tw-flex tw-w-max tw-items-center tw-rounded-lg tw-bg-primary-800/50 tw-px-4 tw-pb-2.5 tw-pt-3 tw-uppercase tw-leading-none tw-transition tw-text-current"
+                className="tags tw-mb-6 tw-flex tw-w-max tw-items-center tw-rounded-lg tw-bg-primary-800/50 tw-px-4 tw-pb-2.5 tw-pt-3 tw-uppercase tw-leading-none tw-text-current tw-transition"
                 data-aos="fade-up"
                 data-aos-delay={50 * idx}
               >

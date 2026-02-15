@@ -1,6 +1,6 @@
-import stackList from "./stackList.json";
-import experienceList from "./experienceList.json";
-import projectList from "./projectList.json";
+import { stackList } from "./stackList";
+import { experienceList } from "./experienceList";
+import { projectList } from "./projectList";
 
 export async function GET(request) {
   const data = {

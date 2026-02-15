@@ -1,4 +1,32 @@
-[
+export const stackList = [
+  {
+    "stackName": "Next JS",
+    "stackIconName": "SiNextdotjs"
+  },
+  {
+    "stackName": "React JS",
+    "stackIconName": "SiReact"
+  },
+  {
+    "stackName": "Typescript",
+    "stackIconName": "SiTypescript"
+  },
+  {
+    "stackName": "Tailwind CSS",
+    "stackIconName": "SiTailwindcss"
+  },
+  {
+    "stackName": "Shadcn UI",
+    "stackIconName": "SiShadcnui"
+  },
+  {
+    "stackName": "Motion",
+    "stackIconName": "SiMotionDev"
+  },
+  {
+    "stackName": "Tanstack Query",
+    "stackIconName": "SiTanstackQuery"
+  },
   {
     "stackName": "HTML",
     "stackIconName": "SiHtml5"
@@ -20,32 +48,8 @@
     "stackIconName": "SiExpress"
   },
   {
-    "stackName": "React JS",
-    "stackIconName": "SiReact"
-  },
-  {
-    "stackName": "Next JS",
-    "stackIconName": "SiNextdotjs"
-  },
-  {
     "stackName": "Bootstrap CSS",
     "stackIconName": "SiBootstrap"
-  },
-  {
-    "stackName": "Tailwind CSS",
-    "stackIconName": "SiTailwindcss"
-  },
-  {
-    "stackName": "Shadcn UI",
-    "stackIconName": "SiShadcnui"
-  },
-  {
-    "stackName": "Motion",
-    "stackIconName": "SiMotionDev"
-  },
-  {
-    "stackName": "Tanstack Query",
-    "stackIconName": "SiTanstackQuery"
   },
   {
     "stackName": "SASS/SCSS",
@@ -79,8 +83,4 @@
     "stackName": "PM2",
     "stackIconName": "SiPm2"
   },
-  {
-    "stackName": "Vercel",
-    "stackIconName": "SiVercel"
-  }
 ]

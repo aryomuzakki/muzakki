@@ -1,6 +1,5 @@
 import * as Icons from "@/components/icons/icons";
 import * as SIcons from "@icons-pack/react-simple-icons";
-import { Fragment } from "react";
 
 const SILoader = ({ iconName, color = "" }) => {
   if (SIcons?.[iconName]) {
@@ -20,7 +19,7 @@ const SILoader = ({ iconName, color = "" }) => {
     const ExtraSIcon = Icons[iconName];
     return <ExtraSIcon color={color} />;
   }
-  return Fragment;
+  return null;
 };
 
 export default SILoader;

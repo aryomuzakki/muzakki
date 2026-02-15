@@ -1,7 +1,21 @@
-[
+export const experienceList = [
   {
     "category": "job",
-    "time": "Jan 2022 - Present",
+    "time": "Jun 2025 - Present",
+    "institution": "Qubic Ball",
+    "location": "Medan, Indonesia",
+    "title": "Frontend Web Developer",
+    "brief": "",
+    "briefList": [
+      "Design and build scalable, production-grade web applications using modern React and Next.js architecture.",
+      "Lead frontend architecture decisions with a focus on modularity, performance optimization, and long-term maintainability.",
+      "Deliver accessible, responsive, cross-browser interfaces aligned with UI/UX systems.",
+      "Optimize rendering strategies, bundle size, and API integrations for high-performance user experiences.",
+    ]
+  },
+  {
+    "category": "job",
+    "time": "Jan 2022 - May 2025",
     "institution": "Bold & Underline",
     "location": "Medan, Indonesia",
     "title": "Web Developer",
@@ -25,18 +39,18 @@
       "Modifying websites with HTML and CSS."
     ]
   },
-  {
-    "category": "job",
-    "time": "Mar 2021 - May 2021",
-    "institution": "Digital Innovation Lounge Medan",
-    "location": "Medan, Indonesia",
-    "title": "Junior Web Developer (Intern)",
-    "brief": "",
-    "briefList": [
-      "Developed website templates with Bootstrap and jQuery.",
-      "Collaborated in a team to deliver a PHP-based website project"
-    ]
-  },
+  // {
+  //   "category": "job",
+  //   "time": "Mar 2021 - May 2021",
+  //   "institution": "Digital Innovation Lounge Medan",
+  //   "location": "Medan, Indonesia",
+  //   "title": "Junior Web Developer (Intern)",
+  //   "brief": "",
+  //   "briefList": [
+  //     "Developed website templates with Bootstrap and jQuery.",
+  //     "Collaborated in a team to deliver a PHP-based website project"
+  //   ]
+  // },
   {
     "category": "education",
     "time": "Sep 2018 - Sep 2021",

@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-import experienceListJSON from "@/app/api/profile/experienceList.json";
+import { experienceList as experienceListData } from "@/app/api/profile/experienceList";
 
 const Experiences = () => {
-  const [experienceList, setExperienceList] = useState(experienceListJSON);
+  const [experienceList, setExperienceList] = useState(experienceListData);
 
   useEffect(() => {
     (async () => {

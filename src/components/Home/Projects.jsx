@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import projectListJSON from "@/app/api/profile/projectList.json";
+import { projectList as projectListData } from "@/app/api/profile/projectList";
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
@@ -15,7 +15,7 @@ import Link from "next/link";
 import SILoader from "../SILoader";
 
 const Projects = () => {
-  const [projectList, setProjectList] = useState(projectListJSON);
+  const [projectList, setProjectList] = useState(projectListData);
 
   const lightGallery = useRef(null);
 
@@ -136,51 +136,55 @@ const Projects = () => {
                             <li key={idx2} className="tw-text-primary-300">
                               {link?.icon === "github" && (
                                 <a
-                                href={link?.url}
-                                target="_blank"
-                                rel="noreferrer noopener"
-                                className=""
-                              >
-                                {/* prettier-ignore */}
-                                <SILoader iconName="SiGithub" />
-                                <span className="tw-sr-only">
-                                  Open {projectData?.title} Github Repository
-                                </span>
-                              </a>
+                                  href={link?.url}
+                                  target="_blank"
+                                  rel="noreferrer noopener"
+                                  className="tw-transition tw-duration-300 hover:tw-text-primary-50"
+                                >
+                                  {/* prettier-ignore */}
+                                  <SILoader iconName="SiGithub" />
+                                  <span className="tw-sr-only">
+                                    Open {projectData?.title} Github Repository
+                                  </span>
+                                </a>
                               )}
-                              {(link?.icon !== "github" && link?.url?.startsWith("http")) ? (
+                              {link?.icon !== "github" &&
+                              link?.url?.startsWith("http") ? (
                                 <a
                                   href={link?.url}
                                   target="_blank"
                                   rel="noreferrer noopener"
-                                  className=""
+                                  className="tw-transition tw-duration-300 hover:tw-text-primary-50"
                                 >
-                                  {/* heroicons:link-20-solid */}
+                                  {/* lucide:globe */}
                                   {/* prettier-ignore */}
-                                  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 20 20">
-                                    <g fill="currentColor">
-                                      <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865a.75.75 0 0 0 .977-1.138a2.5 2.5 0 0 1-.142-3.667z"></path>
-                                      <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138q.072.062.142.131a2.5 2.5 0 0 1 0 3.536l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865"></path>
-                                    </g>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe-icon lucide-globe">
+                                    <circle cx={12} cy={12} r={10} />
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                    <path d="M2 12h20" />
                                   </svg>
                                   <span className="tw-sr-only">
                                     Open {projectData?.title}
                                   </span>
                                 </a>
-                              ) : link?.icon !== "github" && (
-                                <Link href={link?.url}>
-                                  {/* heroicons:link-20-solid */}
-                                  {/* prettier-ignore */}
-                                  <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 20 20">
-                                    <g fill="currentColor">
-                                      <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865a.75.75 0 0 0 .977-1.138a2.5 2.5 0 0 1-.142-3.667z"></path>
-                                      <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138q.072.062.142.131a2.5 2.5 0 0 1 0 3.536l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865"></path>
-                                    </g>
-                                  </svg>
-                                  <span className="tw-sr-only">
-                                    Open {projectData?.title}
-                                  </span>
-                                </Link>
+                              ) : (
+                                link?.icon !== "github" && (
+                                  <Link
+                                    href={link?.url}
+                                    className="tw-transition tw-duration-300 hover:tw-text-primary-50"
+                                  >
+                                    {/* lucide:globe */}
+                                    {/* prettier-ignore */}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe-icon lucide-globe">
+                                      <circle cx={12} cy={12} r={10} />
+                                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                      <path d="M2 12h20" />
+                                    </svg>
+                                    <span className="tw-sr-only">
+                                      Open {projectData?.title}
+                                    </span>
+                                  </Link>
+                                )
                               )}
                             </li>
                           );
