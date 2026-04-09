@@ -15,11 +15,13 @@ export const projectList = [
     "links": [
       {
         "icon": "website",
-        "url": "https://kortova.muzakki.id"
+        "url": "https://kortova.muzakki.id",
+        "title": "Kortova - Demo Booking Web App"
       },
       {
         "icon": "website",
-        "url": "https://thekhourt.com"
+        "url": "https://thekhourt.com",
+        "title": "The Khourt - Court Booking Web App"
       }
     ],
     "tags": [

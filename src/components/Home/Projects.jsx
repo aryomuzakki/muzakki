@@ -55,17 +55,17 @@ const Projects = () => {
         </h3>
       </div>
       <div></div>
-      <ul className="tw-flex tw-flex-wrap tw-items-stretch tw-justify-evenly tw-gap-x-20 tw-gap-y-24">
+      <ul className="tw-grid md:tw-grid-cols-2 xl:tw-grid-cols-3 tw-gap-8">
         {projectList?.length > 0 &&
           projectList.map((projectData, idx) => {
             return (
               <li
                 key={idx}
-                className="tw-flex tw-w-min tw-flex-col tw-gap-y-5 tw-rounded-md tw-bg-primary-800/50 tw-p-7"
+                className="tw-flex tw-w-full tw-flex-col tw-gap-y-5 tw-rounded-md tw-bg-primary-800/50 tw-p-7"
                 data-aos="fade-up"
-                data-aos-delay={50 * idx}
+                data-aos-delay={25 * idx}
               >
-                <div className="tw-w-[70vw] tw-overflow-hidden tw-rounded-t xsm:tw-w-80">
+                <div className="tw-w-full tw-overflow-hidden tw-rounded-t">
                   {projectData?.image ? (
                     <button
                       className="tw-block"
@@ -91,10 +91,11 @@ const Projects = () => {
                         src={projectData?.image}
                         alt={"Thumbnail Project " + projectData?.title}
                         className="tw-h-full tw-w-full tw-object-contain tw-object-center tw-transition tw-duration-500 hover:tw-scale-105"
+                        loading="lazy"
                       />
                     </button>
                   ) : (
-                    <div className="tw-relative tw-flex tw-aspect-video tw-w-[70vw] tw-select-none tw-flex-col tw-items-center tw-justify-center tw-bg-gray-600 xsm:tw-w-80">
+                    <div className="tw-relative tw-flex tw-aspect-video tw-w-full tw-select-none tw-flex-col tw-items-center tw-justify-center tw-bg-gray-600">
                       <div className="tw-absolute tw-inset-0"></div>
                       {/* mdi:image-off-outline */}
                       {/* prettier-ignore */}
@@ -164,7 +165,7 @@ const Projects = () => {
                                     <path d="M2 12h20" />
                                   </svg>
                                   <span className="tw-sr-only">
-                                    Open {projectData?.title}
+                                    Open {link?.title || projectData?.title}
                                   </span>
                                 </a>
                               ) : (

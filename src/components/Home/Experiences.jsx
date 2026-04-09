@@ -120,7 +120,7 @@ const Experiences = () => {
                 </li>
               );
             })}
-          <li>
+          <li className="max-md:tw-pl-1">
             <hr className="-tw-translate-y-1.5 tw-bg-primary-300" />
             {/* <div className="tw-du-timeline-start"></div> */}
             <div className="tw-du-timeline-middle">
