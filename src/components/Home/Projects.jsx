@@ -55,7 +55,7 @@ const Projects = () => {
         </h3>
       </div>
       <div></div>
-      <ul className="tw-grid md:tw-grid-cols-2 xl:tw-grid-cols-3 tw-gap-8">
+      <ul className="tw-grid tw-gap-8 md:tw-grid-cols-2 xl:tw-grid-cols-3">
         {projectList?.length > 0 &&
           projectList.map((projectData, idx) => {
             return (
@@ -65,7 +65,7 @@ const Projects = () => {
                 data-aos="fade-up"
                 data-aos-delay={25 * idx}
               >
-                <div className="tw-w-full tw-overflow-hidden tw-rounded-t">
+                <div className="tw-w-full tw-overflow-hidden tw-rounded">
                   {projectData?.image ? (
                     <button
                       className="tw-block"
