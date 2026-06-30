@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Header from "@/components/Layout/Header";
 import Hero from "@/components/Home/Hero";
 import Stacks from "@/components/Home/Stacks";
@@ -14,7 +15,9 @@ export default function Home() {
       <div className="tw-relative tw-z-0">
         <Stacks />
         <Experiences />
-        <Projects />
+        <Suspense fallback={null}>
+          <Projects />
+        </Suspense>
         <Contact />
         <Footer />
       </div>

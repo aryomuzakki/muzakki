@@ -4,6 +4,7 @@ import "./components.css";
 import MouseLight from "@/components/MouseLight";
 import AOSWrapper from "@/components/Layout/AOSWrapper";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const nunitoSans = localFont({
   src: [
@@ -23,7 +24,7 @@ export const metadata = {
   description: "Muhammad Aryo Muzakki Personal Website",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
@@ -54,7 +55,7 @@ export default function RootLayout({ children }) {
       >
         <MouseLight />
         <AOSWrapper />
-        {children}
+        <NuqsAdapter>{children}</NuqsAdapter>
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_SITE_ENV === "production" && process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
     </html>

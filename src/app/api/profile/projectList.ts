@@ -1,6 +1,26 @@
 export const projectList = [
   {
-    categories: ["browser extension"],
+    categories: ["website", "tools"],
+    time: "2026",
+    role: "Developer",
+    title: "SVG Logo Animator",
+    description: "A web app that generate animated SVG logo from uploaded SVG logo.",
+    image: "/img/portfolio/animate-svg-logo/svgmate_1.webp",
+    imageList: [
+      "/img/portfolio/animate-svg-logo/svgmate_2.webp",
+      "/img/portfolio/animate-svg-logo/svgmate_3.webp",
+    ],
+    links: [
+      {
+        icon: "website",
+        url: "https://svgmate.muzakki.id",
+        title: "SVG Logo Animator",
+      },
+    ],
+    tags: ["React", "SVG", "Animation"],
+  },
+  {
+    categories: ["browser-extension", "tools"],
     time: "2026",
     role: "Developer",
     title: "Privacy for WhatsApp Web (Auto Blur WA)",
@@ -15,10 +35,10 @@ export const projectList = [
         title: "Privacy for WhatsApp Web (Auto Blur WA)",
       },
     ],
-    tags: ["Browser Extension", "Chrome Extension", "Firefox Extension"],
+    tags: ["Chrome Extension", "Firefox Extension", "Privacy"],
   },
   {
-    categories: ["website", "web app"],
+    categories: ["website"],
     time: "2025",
     role: "Fullstack Web Developer",
     title: "The Khourt - Booking Web App",
@@ -38,10 +58,10 @@ export const projectList = [
         title: "The Khourt - Court Booking Web App",
       },
     ],
-    tags: ["Booking Website", "Web App", "System"],
+    tags: ["React", "Next.js", "Tailwind CSS"],
   },
   {
-    categories: ["website", "company profile"],
+    categories: ["website"],
     time: "2025",
     role: "Fullstack Web Developer",
     title: "Yayasan Perguruan Sultan Iskandar Muda",
@@ -56,10 +76,10 @@ export const projectList = [
         url: "https://ypsim.id",
       },
     ],
-    tags: ["Company Profile", "School"],
+    tags: ["Next.js", "Tailwind CSS", "CMS"],
   },
   {
-    categories: ["website", "desktop app"],
+    categories: ["desktop-app", "tools"],
     time: "2024",
     role: "Fullstack Developer",
     title: "Timer Countdown",
@@ -78,10 +98,10 @@ export const projectList = [
         url: "https://timer.muzakki.id",
       },
     ],
-    tags: ["Tools"],
+    tags: ["Tauri", "Next.js", "React"],
   },
   {
-    categories: ["website"],
+    categories: ["website", "tools"],
     time: "2024",
     role: "Fullstack Web Developer",
     title: "QR Generator & Scanner",
@@ -102,7 +122,7 @@ export const projectList = [
         url: "https://qrcode.muzakki.id",
       },
     ],
-    tags: ["Tools"],
+    tags: ["Next.js", "QR Code"],
   },
   {
     categories: ["website"],
@@ -120,7 +140,7 @@ export const projectList = [
         url: "/project/wfdrsa2024/demo",
       },
     ],
-    tags: ["Landing Page", "Microsite"],
+    tags: ["HTML", "CSS", "Bootstrap", "Landing Page"],
   },
   {
     categories: ["website"],
@@ -140,7 +160,7 @@ export const projectList = [
         url: "https://satyaterrabhinneka.ac.id",
       },
     ],
-    tags: ["Company Profile"],
+    tags: ["Next.js", "WordPress CMS", "Multi-language"],
   },
   {
     categories: ["website"],
@@ -160,7 +180,7 @@ export const projectList = [
         url: "https://matakailcommunication.com",
       },
     ],
-    tags: ["Company Profile"],
+    tags: ["Next.js", "Tailwind CSS", "Landing Page"],
   },
   {
     categories: ["website"],
@@ -180,7 +200,7 @@ export const projectList = [
         url: "https://halal-center-indonesia.muzakki.id",
       },
     ],
-    tags: ["Company Profile"],
+    tags: ["Next.js", "WordPress CMS"],
   },
   {
     categories: ["website"],
@@ -200,7 +220,7 @@ export const projectList = [
         url: "https://web.archive.org/web/20210512035654/https://azisten.com/",
       },
     ],
-    tags: ["Company Profile"],
+    tags: ["HTML", "CSS", "Landing Page"],
   },
   {
     categories: ["website"],
@@ -216,10 +236,10 @@ export const projectList = [
         url: "",
       },
     ],
-    tags: ["QR Ticketing"],
+    tags: ["QR Code", "Ticketing"],
   },
   {
-    categories: ["website"],
+    categories: ["website", "tools"],
     time: "2022",
     role: "Fullstack Web Developer",
     title: "Lucky Draw - Spin Wheel",
@@ -233,10 +253,10 @@ export const projectList = [
         url: "",
       },
     ],
-    tags: ["Lucky Draw"],
+    tags: ["JavaScript", "Canvas"],
   },
   {
-    categories: ["website"],
+    categories: ["website", "tools"],
     time: "2022",
     role: "Fullstack Web Developer",
     title: "Lucky Draw - Random Number",
@@ -249,10 +269,10 @@ export const projectList = [
         url: "",
       },
     ],
-    tags: ["Lucky Draw"],
+    tags: ["JavaScript", "Tools"],
   },
   {
-    categories: ["website"],
+    categories: ["website", "tools"],
     time: "2023",
     role: "Fullstack Web Developer",
     title: "PDF Viewer",
@@ -267,7 +287,7 @@ export const projectList = [
         url: "",
       },
     ],
-    tags: ["Tools"],
+    tags: ["Next.js", "Tools"],
   },
 ];
 
