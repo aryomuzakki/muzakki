@@ -6,10 +6,7 @@ export const projectList = [
     title: "SVG Logo Animator",
     description: "A web app that generate animated SVG logo from uploaded SVG logo.",
     image: "/img/portfolio/animate-svg-logo/svgmate_1.webp",
-    imageList: [
-      "/img/portfolio/animate-svg-logo/svgmate_2.webp",
-      "/img/portfolio/animate-svg-logo/svgmate_3.webp",
-    ],
+    imageList: ["/img/portfolio/animate-svg-logo/svgmate_2.webp"],
     links: [
       {
         icon: "website",
